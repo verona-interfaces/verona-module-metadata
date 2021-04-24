@@ -1,0 +1,116 @@
+{
+    "$id": "https://github.com/verona-interfaces/metadata/schema/verona_module_player.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Verona Module Player",
+    "description": "Profile of a Verona Module Player",
+    "type": "object",
+    "default": {
+        "@context": "https://w3id.org/iqb/verona-modules",
+        "@type": "player",
+        "@id": "iqb-verona-player-plaintext"
+    },
+    "properties": {
+        "Verona Module": {
+            "title": "Verona Module",
+            "description": "General information of a verona module",
+            "type": "object",
+            "properties": {
+                "ID": {
+                    "title": "ID",
+                    "description": "ID of a verona module",
+                    "type": "string",
+                    "pattern": "[A-Za-z0-9_-]"
+                },
+                "Version": {
+                    "title": "Version",
+                    "description": "Semantic Version of a verona module",
+                    "type": "string",
+                    "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+                    "_display": {
+                        "placeholder": "MAJOR.MINOR.PATCH"
+                    }
+                },
+                "Type": {
+                    "title": "Type",
+                    "description": "Type of a verona module",
+                    "type": "string",
+                    "enum": [
+                        "Editor",
+                        "Player"
+                    ]
+                },
+                "Name": {
+                    "title": "Name",
+                    "description": "name of a verona module",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Description": {
+                    "title": "Description",
+                    "description": "Description of a verona module",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "_display": {
+                            "rows": 5
+                        }
+                    }
+                },
+                "Maintainer": {
+                    "$ref": "https://github.com/verona-interfaces/metadata/schema/verona_module_maintainer.json"
+                },
+                "Repository": {
+                    "title": "Repository",
+                    "description": "Repository in which the verona module code can be found",
+                    "type": "string",
+                    "format": "uri"
+                }
+            }
+        },
+        "Player-Only": {
+            "title": "Verona Module Player",
+            "description": "Verona Module Type: Player",
+            "type": "object",
+            "properties": {
+                "not-supported-features-player": {
+                    "title": "Not-supported-features-player",
+                    "description": "Features that are exclusive to the player and not supported",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "stop-continue",
+                            "focus-notify",
+                            "report-on-demand",
+                            "log-policy",
+                            "paging-mode",
+                            "navigation-denied"
+                        ]
+                    }
+                },
+                "response type": {
+                    "title": "response type",
+                    "type": "string",
+                    "_dislay": {
+                        "placeholder": "name@version major.minor"
+                    }
+                },
+                "definition type": {
+                    "title": "definition type",
+                    "type": "string",
+                    "_display": {
+                        "placeholder": "name@version major.minor"
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "ID",
+        "Version",
+        "Type",
+        "Name"
+    ]
+}
