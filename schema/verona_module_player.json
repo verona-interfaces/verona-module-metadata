@@ -1,5 +1,5 @@
 {
-    "$id": "https://github.com/verona-interfaces/metadata/schema/verona_module_player.json",
+    "$id": "https://raw.githubusercontent.com/verona-interfaces/metadata/master/schema/verona_module_player.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Verona Module Player",
     "description": "Profile of a Verona Module Player",
