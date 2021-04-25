@@ -68,6 +68,9 @@
                 "Repository": {
                     "title": "Repository",
                     "description": "Repository in which the verona module code can be found",
+                    "default": {
+                        "@type": "git"
+                    },
                     "type": "string",
                     "format": "uri"
                 }
