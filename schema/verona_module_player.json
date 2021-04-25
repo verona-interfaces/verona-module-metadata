@@ -81,12 +81,12 @@
                     "items": {
                         "type": "string",
                         "enum": [
-                            "stop-continue",
-                            "focus-notify",
-                            "report-on-demand",
-                            "log-policy",
-                            "paging-mode",
-                            "navigation-denied"
+                            "stop-continue | the player will not handle the host's vopStopCommand and vopContinueCommand",
+                            "focus-notify | the player will not send vopWindowsFocusChangedNotification in case",
+                            "report-on-demand | the player will send data only eager or none, never on-demand",
+                            "log-policy | the player will ignore playerConfig.logPolicy of vopStartCommand",
+                            "paging-mode | the player will ignore playerConfig.pagingMode of vopStartCommand",
+                            "navigation-denied | the player ignores the Navigation Denied Notification of the host"
                         ]
                     }
                 },

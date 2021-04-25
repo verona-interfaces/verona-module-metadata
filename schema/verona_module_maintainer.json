@@ -16,14 +16,20 @@
         "URL": {
             "title": "URL",
             "description": "URL of a website of the maintainer",
-            "type": "string",
-            "format": "uri"
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "uri"
+            }
         },
         "E-Mail": {
             "title": "E-Mail",
             "description": "E-Mail address of the maintainer",
-            "type": "string",
-            "format": "email"
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "email"
+            }
         }
     },
     "required": [
