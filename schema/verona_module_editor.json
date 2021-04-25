@@ -59,7 +59,7 @@
                     }
                 },
                 "Maintainer": {
-                    "$ref": "https://github.com/verona-interfaces/metadata/schema/verona_module_maintainer.json"
+                    "$ref": "https://raw.githubusercontent.com/verona-interfaces/metadata/master/schema/verona_module_maintainer.json"
                 },
                 "Repository": {
                     "title": "Repository",
