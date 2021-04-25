@@ -68,11 +68,25 @@
                 "Repository": {
                     "title": "Repository",
                     "description": "Repository in which the verona module code can be found",
-                    "default": {
-                        "@type": "git"
-                    },
-                    "type": "string",
-                    "format": "uri"
+                    "type": "object",
+                    "properties": {
+                        "Type": {
+                            "title": "Type",
+                            "description": "Type of repository",
+                            "type": "string",
+                            "enum": [
+                                "Git",
+                                "SVN",
+                                "Mercurial"
+                            ]
+                        },
+                        "URL": {
+                            "title": "URL",
+                            "description": "URL of a repository",
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    }
                 }
             },
             "required": [
