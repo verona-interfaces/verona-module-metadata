@@ -67,7 +67,13 @@
                     "type": "string",
                     "format": "uri"
                 }
-            }
+            },
+            "required": [
+                "ID",
+                "Version",
+                "Type",
+                "Name"
+            ]
         },
         "Editor-Only": {
             "title": "Verona Module Editor",
@@ -81,7 +87,7 @@
                     "items": {
                         "type": "string",
                         "enum": [
-                            "report-eager"
+                            "report-eager | the editor will send data only on-demand. So if the host likes to get all data at every change, it must send voeGetDefinitionRequest right after getting the change notification"
                         ]
                     }
                 },
@@ -94,11 +100,5 @@
                 }
             }
         }
-    },
-    "required": [
-        "ID",
-        "Version",
-        "Type",
-        "Name"
-    ]
+    }
 }
