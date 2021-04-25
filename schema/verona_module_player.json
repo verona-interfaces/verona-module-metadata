@@ -39,12 +39,26 @@
                         "Player"
                     ]
                 },
-                "Name": {
-                    "title": "Name",
+                "Label": {
+                    "title": "Label",
                     "description": "name of a verona module",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
+                    "type": "object",
+                    "properties": {
+                        "language": {
+                            "title": "Language",
+                            "type": "array",
+                            "items": {
+                                "$ref": "https://dini-ag-kim.github.io/lrmi-profile/draft/schemas/Language.json"
+                            }
+                        },
+                        "Name": {
+                            "title": "Name",
+                            "type": "string",
+                            "enum": [
+                                "IQB-Editor für Text",
+                                "IQB editor for plain text"
+                            ]
+                        }
                     }
                 },
                 "Description": {
