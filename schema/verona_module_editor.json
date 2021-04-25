@@ -44,7 +44,11 @@
                     "description": "name of a verona module",
                     "type": "array",
                     "items": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                            "de: IQB-Editor für Text",
+                            "en: IQB editor for plaintext"
+                        ]
                     }
                 },
                 "Description": {

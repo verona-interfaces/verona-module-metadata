@@ -46,8 +46,8 @@
                     "items": {
                         "type": "string",
                         "enum": [
-                            "de: IQB-Editor für Text",
-                            "en: IQB editor for plaintext"
+                            "de: IQB-Player für Medien",
+                            "en: IQB player for media"
                         ]
                     }
                 },
@@ -103,7 +103,7 @@
                 "response type": {
                     "title": "response type",
                     "type": "string",
-                    "_dislay": {
+                    "_display": {
                         "placeholder": "name@version major.minor"
                     }
                 },
