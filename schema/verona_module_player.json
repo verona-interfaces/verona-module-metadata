@@ -7,7 +7,7 @@
     "default": {
         "@context": "https://w3id.org/iqb/verona-modules",
         "@type": "player",
-        "@id": "iqb-verona-player-plaintext"
+        "@id": "iqb-verona-player"
     },
     "properties": {
         "Verona Module": {
