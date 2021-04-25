@@ -46,8 +46,8 @@
                     "items": {
                         "type": "string",
                         "enum": [
-                            "de: IQB-Editor für Text",
-                            "en: IQB editor for plaintext"
+                            "de\": \"IQB-Editor für Text",
+                            "en\": \"IQB editor for plaintext"
                         ]
                     }
                 },

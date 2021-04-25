@@ -46,8 +46,8 @@
                     "items": {
                         "type": "string",
                         "enum": [
-                            "de: IQB-Player für Medien",
-                            "en: IQB player for media"
+                            "de\": \"IQB-Player für Medien",
+                            "en\": \"IQB player for media"
                         ]
                     }
                 },
@@ -84,7 +84,10 @@
                             "title": "URL",
                             "description": "URL of a repository",
                             "type": "string",
-                            "format": "uri"
+                            "format": "uri",
+                            "_display": {
+                                "placeholder": "Please enter an URL"
+                            }
                         }
                     }
                 }
