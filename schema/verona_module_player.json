@@ -450,7 +450,17 @@
             "description": "Repository in which the verona module code can be found",
             "type": "object",
             "properties": {
-                "Type": {
+                "@context": {
+                    "title": "Context",
+                    "enum": [
+                        "https://schema.org/",
+                        "None"
+                    ],
+                    "_display": {
+                        "placeholder": "Choose a different context (optional)"
+                    }
+                },
+                "type": {
                     "title": "Type",
                     "description": "Type of repository",
                     "type": "string",
@@ -460,7 +470,7 @@
                         "Mercurial"
                     ]
                 },
-                "URL": {
+                "url": {
                     "title": "URL",
                     "description": "URL of a repository",
                     "type": "string",
