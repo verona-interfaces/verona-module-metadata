@@ -452,6 +452,7 @@
             "properties": {
                 "@context": {
                     "title": "Context",
+                    "type": "string",
                     "enum": [
                         "https://schema.org/",
                         "None"
