@@ -8,6 +8,12 @@
         "@context": "https://w3id.org/iqb/verona-modules",
         "@language": "de"
     },
+    "required": [
+        "ID",
+        "Version",
+        "Type",
+        "Name"
+    ],
     "properties": {
         "@type": {
             "title": "Type",
@@ -29,10 +35,9 @@
             "description": "Name of verona module",
             "type": "array",
             "items": {
-                "title": "name object",
                 "type": "object",
                 "properties": {
-                    "Language": {
+                    "@language": {
                         "type": "string",
                         "enum": [
                             "aa",
@@ -294,13 +299,7 @@
                         }
                     }
                 }
-            },
-            "required": [
-                "ID",
-                "Version",
-                "Type",
-                "Name"
-            ]
+            }
         },
         "Player-Only": {
             "title": "Verona Module Player",
