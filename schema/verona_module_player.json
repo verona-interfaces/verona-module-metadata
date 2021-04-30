@@ -8,12 +8,6 @@
         "@context": "https://w3id.org/iqb/verona-modules",
         "@language": "de"
     },
-    "required": [
-        "ID",
-        "Version",
-        "Type",
-        "Name"
-    ],
     "properties": {
         "@type": {
             "title": "Type",
@@ -226,10 +220,14 @@
                             "zu"
                         ]
                     },
-                    "name": {
+                    "value": {
                         "type": "string"
                     }
-                }
+                },
+                "required": [
+                    "@language",
+                    "value"
+                ]
             }
             
         },
@@ -338,5 +336,11 @@
                 }
             }
         }
-    }
+    },
+    "required": [
+        "@id",
+        "Version",
+        "@type",
+        "Name"
+    ]
 }
