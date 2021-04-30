@@ -445,6 +445,35 @@
                 }
             }
         },
+        "Maintainer": {
+            "title": "Maintainer",
+            "description": "Maintainer of the verona module",
+            "type": "object",
+            "properties": {
+                "@context": {
+                    "title": "Context",
+                    "type": "string",
+                    "format": "uri",
+                    "_display": {
+                        "placeholder": "Please enter a valid URL to another context (e.g., schema.org)"
+                    }
+                },
+                "name":{
+                    "title": "Name",
+                    "type": "string"
+                },
+                "url": {
+                    "title": "URL",
+                    "type": "string",
+                    "format": "uri"
+                },
+                "email": {
+                    "title": "E-Mail",
+                    "type": "string",
+                    "format": "email"
+                }
+            }
+        },
         "Repository": {
             "title": "Repository",
             "description": "Repository in which the verona module code can be found",
