@@ -6,10 +6,7 @@
     "type": "object",
     "default": {
         "@context": [
-            "https://raw.githubusercontent.com/verona-interfaces/metadata/master/schema/context.jsonld",
-            {
-                "@language": "de"
-            }
+            "https://raw.githubusercontent.com/verona-interfaces/metadata/master/schema/context.jsonld"
         ],
         "type": "SoftwareApplication"
     },
@@ -488,7 +485,7 @@
             "description": "Repository in which the verona module code can be found",
             "type": "object",
             "properties": {
-                "type": {
+                "Classs": {
                     "title": "Type",
                     "description": "Type of repository",
                     "type": "string",
@@ -541,9 +538,9 @@
         }
     },
     "required": [
-        "@id",
-        "Version",
-        "@type",
-        "Name"
+        "id",
+        "softwareVersion",
+        "iqb:type",
+        "name"
     ]
 }
