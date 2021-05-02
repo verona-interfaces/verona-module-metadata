@@ -2,7 +2,7 @@
     "@context": {
         "id": "@id",
         "type": "@type",
-        "@vocab": "https://schema.org",
+        "@vocab": "https://schema.org/",
         "iqb": "https://example.org/#"
     }
 }
