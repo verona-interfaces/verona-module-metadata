@@ -5,8 +5,13 @@
     "description": "Profile of a Verona Module Player",
     "type": "object",
     "default": {
-        "@context": "https://w3id.org/iqb/verona-modules",
-        "@language": "de"
+        "@context": [
+            "https://raw.githubusercontent.com/verona-interfaces/metadata/master/schema/context.jsonld",
+            {
+                "@language": "de"
+            }
+        ],
+        "type": "SoftwareApplication"
     },
     "properties": {
         "@type": {
@@ -18,7 +23,7 @@
                 "Player"
             ]
         },
-        "@id": {
+        "id": {
             "title": "ID",
             "description": "ID of the verona module",
             "type": "string",
@@ -31,7 +36,7 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "@language": {
+                    "inLanguage": {
                         "type": "string",
                         "enum": [
                             "aa",
@@ -225,19 +230,9 @@
                     }
                 },
                 "required": [
-                    "@language",
+                    "inLanguage",
                     "value"
                 ]
-            }
-            
-        },
-        "version": {
-            "title": "Version",
-            "description": "Semantic Version of a verona module",
-            "type": "string",
-            "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
-            "_display": {
-                "placeholder": "MAJOR.MINOR.PATCH"
             }
         },
         "description": {
@@ -247,7 +242,7 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "@language": {
+                    "inLanguage": {
                         "type": "string",
                         "enum": [
                             "aa",
@@ -445,18 +440,32 @@
                 }
             }
         },
-        "Maintainer": {
+        "softwareVersion": {
+            "title": "Version",
+            "description": "Semantic Version of a verona module",
+            "type": "string",
+            "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+            "_display": {
+                "placeholder": "MAJOR.MINOR.PATCH"
+            }
+        },
+        "iqb:api-version": {
+            "title": "API-Version",
+            "description": "Current API version",
+            "type": "string"
+        },
+        "maintainer": {
             "title": "Maintainer",
             "description": "Maintainer of the verona module",
             "type": "object",
             "properties": {
-                "@context": {
-                    "title": "Context",
-                    "type": "string",
-                    "format": "uri",
-                    "_display": {
-                        "placeholder": "Please enter a valid URL to another context (e.g., schema.org)"
-                    }
+                "type": {
+                  "title": "Type",
+                  "type": "string",
+                  "enum": [
+                      "Person",
+                      "Organisation"
+                  ]  
                 },
                 "name":{
                     "title": "Name",
@@ -474,22 +483,11 @@
                 }
             }
         },
-        "Repository": {
+        "codeRepository": {
             "title": "Repository",
             "description": "Repository in which the verona module code can be found",
             "type": "object",
             "properties": {
-                "@context": {
-                    "title": "Context",
-                    "type": "string",
-                    "enum": [
-                        "https://schema.org/",
-                        "None"
-                    ],
-                    "_display": {
-                        "placeholder": "Choose a different context (optional)"
-                    }
-                },
                 "type": {
                     "title": "Type",
                     "description": "Type of repository",
@@ -511,7 +509,7 @@
                 }
             }
         },
-        "not-supported-features-player": {
+        "iqb:not-supported-features-player": {
             "title": "Not-supported-features-player",
             "description": "Features that are exclusive to the player and not supported",
             "type": "array",
@@ -527,14 +525,14 @@
                 ]
             }
         },
-        "response type": {
+        "iqb:response type": {
             "title": "response type",
             "type": "string",
             "_display": {
                 "placeholder": "name@version major.minor"
             }
         },
-        "definition type": {
+        "iqb:definition type": {
             "title": "definition type",
             "type": "string",
             "_display": {
