@@ -459,7 +459,7 @@
             "description": "Maintainer of the verona module",
             "type": "object",
             "properties": {
-                "type": {
+                "@type": {
                   "title": "Type",
                   "type": "string",
                   "enum": [
