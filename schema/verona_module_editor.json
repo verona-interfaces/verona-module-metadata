@@ -1,128 +1,554 @@
 {
     "$id": "https://raw.githubusercontent.com/verona-interfaces/metadata/master/schema/verona_module_editor.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Verona Module Editor",
+    "title": "Verona Module Player",
     "description": "Profile of a Verona Module Editor",
     "type": "object",
     "default": {
-        "@context": "https://w3id.org/iqb/verona-modules",
-        "@type": "editor",
-        "@id": "iqb-verona-editor-plaintext"
+        "@context": [
+            "https://raw.githubusercontent.com/verona-interfaces/metadata/master/schema/context.jsonld"
+        ],
+        "@type": "SoftwareApplication"
     },
     "properties": {
-        "Verona Module": {
-            "title": "Verona Module",
-            "description": "General information of a verona module",
-            "type": "object",
-            "properties": {
-                "ID": {
-                    "title": "ID",
-                    "description": "ID of a verona module",
-                    "type": "string",
-                    "pattern": "[A-Za-z0-9_-]"
-                },
-                "Version": {
-                    "title": "Version",
-                    "description": "Semantic Version of a verona module",
-                    "type": "string",
-                    "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
-                    "_display": {
-                        "placeholder": "MAJOR.MINOR.PATCH"
-                    }
-                },
-                "Type": {
-                    "title": "Type",
-                    "description": "Type of a verona module",
-                    "type": "string",
-                    "enum": [
-                        "Editor",
-                        "Player"
-                    ]
-                },
-                "Name": {
-                    "title": "Name",
-                    "description": "name of a verona module",
-                    "type": "array",
-                    "items": {
+        "iqb:type": {
+            "title": "Type",
+            "description": "Type of a verona module",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Player",
+                    "Editor"
+                ]
+            }
+        },
+        "identifier": {
+            "title": "ID",
+            "description": "ID of the verona module",
+            "type": "string",
+            "pattern": "[A-Za-z0-9_-]"
+        },
+        "name": {
+            "title": "Name",
+            "description": "Name of verona module",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "inLanguage": {
                         "type": "string",
                         "enum": [
-                            "de: IQB-Editor für Text",
-                            "en: IQB editor for plaintext"
+                            "aa",
+                            "ab",
+                            "ae",
+                            "af",
+                            "ak",
+                            "am",
+                            "an",
+                            "ar",
+                            "as",
+                            "av",
+                            "ay",
+                            "az",
+                            "ba",
+                            "be",
+                            "bg",
+                            "bh",
+                            "bi",
+                            "bm",
+                            "bn",
+                            "bo",
+                            "br",
+                            "bs",
+                            "ca",
+                            "ce",
+                            "ch",
+                            "co",
+                            "cr",
+                            "cs",
+                            "cu",
+                            "cv",
+                            "cy",
+                            "da",
+                            "de",
+                            "dv",
+                            "dz",
+                            "ee",
+                            "el",
+                            "en",
+                            "eo",
+                            "es",
+                            "et",
+                            "eu",
+                            "fa",
+                            "ff",
+                            "fi",
+                            "fj",
+                            "fo",
+                            "fr",
+                            "fy",
+                            "ga",
+                            "gd",
+                            "gl",
+                            "gn",
+                            "gu",
+                            "gv",
+                            "ha",
+                            "hi",
+                            "ho",
+                            "hr",
+                            "ht",
+                            "hu",
+                            "hy",
+                            "hz",
+                            "ia",
+                            "ie",
+                            "ig",
+                            "ii",
+                            "ik",
+                            "io",
+                            "is",
+                            "it",
+                            "iu",
+                            "ja",
+                            "jv",
+                            "ka",
+                            "kg",
+                            "ki",
+                            "kj",
+                            "kk",
+                            "kl",
+                            "km",
+                            "kn",
+                            "ko",
+                            "kr",
+                            "ks",
+                            "ku",
+                            "kv",
+                            "kw",
+                            "ky",
+                            "la",
+                            "lb",
+                            "lg",
+                            "li",
+                            "ln",
+                            "lo",
+                            "lt",
+                            "lu",
+                            "lv",
+                            "mg",
+                            "mh",
+                            "mi",
+                            "mk",
+                            "ml",
+                            "mn",
+                            "mo",
+                            "mr",
+                            "ms",
+                            "mt",
+                            "my",
+                            "na",
+                            "nb",
+                            "nd",
+                            "ne",
+                            "ng",
+                            "nl",
+                            "nn",
+                            "no",
+                            "nr",
+                            "nv",
+                            "nvi",
+                            "ny",
+                            "oc",
+                            "oj",
+                            "om",
+                            "or",
+                            "os",
+                            "pa",
+                            "pi",
+                            "pl",
+                            "ps",
+                            "pt",
+                            "qu",
+                            "rm",
+                            "rn",
+                            "ro",
+                            "ru",
+                            "rw",
+                            "sa",
+                            "sc",
+                            "sd",
+                            "se",
+                            "sg",
+                            "si",
+                            "sk",
+                            "sl",
+                            "sm",
+                            "smi",
+                            "sn",
+                            "so",
+                            "sq",
+                            "sr",
+                            "ss",
+                            "st",
+                            "su",
+                            "sv",
+                            "sw",
+                            "ta",
+                            "te",
+                            "tg",
+                            "th",
+                            "ti",
+                            "tk",
+                            "tl",
+                            "tn",
+                            "to",
+                            "tr",
+                            "ts",
+                            "tt",
+                            "tw",
+                            "ty",
+                            "ug",
+                            "uk",
+                            "ur",
+                            "uz",
+                            "ve",
+                            "vi",
+                            "vo",
+                            "wa",
+                            "wo",
+                            "xh",
+                            "yo",
+                            "za",
+                            "zh",
+                            "zu"
                         ]
+                    },
+                    "name": {
+                        "type": "string"
                     }
                 },
-                "Description": {
-                    "title": "Description",
-                    "description": "Description of a verona module",
-                    "type": "array",
-                    "items": {
+                "required": [
+                    "inLanguage",
+                    "name"
+                ]
+            }
+        },
+        "description": {
+            "title": "Description",
+            "description": "Description of a verona module",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "inLanguage": {
+                        "type": "string",
+                        "enum": [
+                            "aa",
+                            "ab",
+                            "ae",
+                            "af",
+                            "ak",
+                            "am",
+                            "an",
+                            "ar",
+                            "as",
+                            "av",
+                            "ay",
+                            "az",
+                            "ba",
+                            "be",
+                            "bg",
+                            "bh",
+                            "bi",
+                            "bm",
+                            "bn",
+                            "bo",
+                            "br",
+                            "bs",
+                            "ca",
+                            "ce",
+                            "ch",
+                            "co",
+                            "cr",
+                            "cs",
+                            "cu",
+                            "cv",
+                            "cy",
+                            "da",
+                            "de",
+                            "dv",
+                            "dz",
+                            "ee",
+                            "el",
+                            "en",
+                            "eo",
+                            "es",
+                            "et",
+                            "eu",
+                            "fa",
+                            "ff",
+                            "fi",
+                            "fj",
+                            "fo",
+                            "fr",
+                            "fy",
+                            "ga",
+                            "gd",
+                            "gl",
+                            "gn",
+                            "gu",
+                            "gv",
+                            "ha",
+                            "hi",
+                            "ho",
+                            "hr",
+                            "ht",
+                            "hu",
+                            "hy",
+                            "hz",
+                            "ia",
+                            "ie",
+                            "ig",
+                            "ii",
+                            "ik",
+                            "io",
+                            "is",
+                            "it",
+                            "iu",
+                            "ja",
+                            "jv",
+                            "ka",
+                            "kg",
+                            "ki",
+                            "kj",
+                            "kk",
+                            "kl",
+                            "km",
+                            "kn",
+                            "ko",
+                            "kr",
+                            "ks",
+                            "ku",
+                            "kv",
+                            "kw",
+                            "ky",
+                            "la",
+                            "lb",
+                            "lg",
+                            "li",
+                            "ln",
+                            "lo",
+                            "lt",
+                            "lu",
+                            "lv",
+                            "mg",
+                            "mh",
+                            "mi",
+                            "mk",
+                            "ml",
+                            "mn",
+                            "mo",
+                            "mr",
+                            "ms",
+                            "mt",
+                            "my",
+                            "na",
+                            "nb",
+                            "nd",
+                            "ne",
+                            "ng",
+                            "nl",
+                            "nn",
+                            "no",
+                            "nr",
+                            "nv",
+                            "nvi",
+                            "ny",
+                            "oc",
+                            "oj",
+                            "om",
+                            "or",
+                            "os",
+                            "pa",
+                            "pi",
+                            "pl",
+                            "ps",
+                            "pt",
+                            "qu",
+                            "rm",
+                            "rn",
+                            "ro",
+                            "ru",
+                            "rw",
+                            "sa",
+                            "sc",
+                            "sd",
+                            "se",
+                            "sg",
+                            "si",
+                            "sk",
+                            "sl",
+                            "sm",
+                            "smi",
+                            "sn",
+                            "so",
+                            "sq",
+                            "sr",
+                            "ss",
+                            "st",
+                            "su",
+                            "sv",
+                            "sw",
+                            "ta",
+                            "te",
+                            "tg",
+                            "th",
+                            "ti",
+                            "tk",
+                            "tl",
+                            "tn",
+                            "to",
+                            "tr",
+                            "ts",
+                            "tt",
+                            "tw",
+                            "ty",
+                            "ug",
+                            "uk",
+                            "ur",
+                            "uz",
+                            "ve",
+                            "vi",
+                            "vo",
+                            "wa",
+                            "wo",
+                            "xh",
+                            "yo",
+                            "za",
+                            "zh",
+                            "zu"
+                        ]
+                    },
+                    "description": {
                         "type": "string",
                         "_display": {
-                            "rows": 5
+                            "rows": 4
                         }
-                    }
-                },
-                "Maintainer": {
-                    "$ref": "https://raw.githubusercontent.com/verona-interfaces/metadata/master/schema/verona_module_maintainer.json"
-                },
-                "Repository": {
-                    "title": "Repository",
-                    "description": "Repository in which the verona module code can be found",
-                    "type": "object",
-                    "properties": {
-                        "Type": {
-                            "title": "Type",
-                            "description": "Type of repository",
-                            "type": "string",
-                            "enum": [
-                                "Git",
-                                "SVN",
-                                "Mercurial"
-                            ]
-                        },
-                        "URL": {
-                            "title": "URL",
-                            "description": "URL of a repository",
-                            "type": "string",
-                            "format": "uri",
-                            "_display": {
-                                "placeholder": "Please enter an URL"
-                            }
-                        }
-                    }
-                }
-            },
-            "required": [
-                "ID",
-                "Version",
-                "Type",
-                "Name"
-            ]
-        },
-        "Editor-Only": {
-            "title": "Verona Module Editor",
-            "description": "Verona Module Type: Editor",
-            "type": "object",
-            "properties": {
-                "not-supported-features-editor": {
-                    "title": "Not-supported-features-editor",
-                    "description": "Features that are exclusive to the editor and not supported",
-                    "type": "array",
-                    "items": {
-                        "type": "string",
-                        "enum": [
-                            "report-eager | the editor will send data only on-demand. So if the host likes to get all data at every change, it must send voeGetDefinitionRequest right after getting the change notification"
-                        ]
-                    }
-                },
-                "definition type": {
-                    "title": "definition type",
-                    "type": "string",
-                    "_display": {
-                        "placeholder": "name@version major.minor"
                     }
                 }
             }
+        },
+        "softwareVersion": {
+            "title": "Version",
+            "description": "Semantic Version of a verona module",
+            "type": "string",
+            "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+            "_display": {
+                "placeholder": "MAJOR.MINOR.PATCH"
+            }
+        },
+        "iqb:apiVersion": {
+            "title": "API-Version",
+            "description": "Current API version",
+            "type": "string"
+        },
+        "maintainer": {
+            "title": "Maintainer",
+            "description": "Maintainer of the verona module",
+            "type": "object",
+            "properties": {
+                "type": {
+                  "title": "Type",
+                  "type": "string",
+                  "enum": [
+                      "Person",
+                      "Organisation"
+                  ]  
+                },
+                "name":{
+                    "title": "Name",
+                    "type": "string"
+                },
+                "url": {
+                    "title": "URL",
+                    "type": "string",
+                    "format": "uri"
+                },
+                "email": {
+                    "title": "E-Mail",
+                    "type": "string",
+                    "format": "email"
+                }
+            }
+        },
+        "SoftwareSourceCode": {
+            "title": "Repository",
+            "description": "Repository in which the verona module code can be found",
+            "type": "object",
+            "properties": {
+                "@type": {
+                    "title": "Context",
+                    "type": "string",
+                    "enum": [
+                        "SoftwareSourceCode"
+                    ],
+                    "_display": {
+                        "placeholder": "Please set this to SoftwareSourceCode"
+                    }
+                },
+                "Class": {
+                    "title": "Type",
+                    "description": "Type of repository",
+                    "type": "string",
+                    "enum": [
+                        "Git",
+                        "SVN",
+                        "Mercurial"
+                    ]
+                },
+                "codeRepository": {
+                    "title": "URL",
+                    "description": "URL of a repository",
+                    "type": "string",
+                    "format": "uri",
+                    "_display": {
+                        "placeholder": "Please enter an URL"
+                    }
+                }
+            }
+        },
+        "iqb:not-supported-features-player": {
+            "title": "Not-supported-features-player",
+            "description": "Features that are exclusive to the player and not supported",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "report-eager | the editor will send data only on-demand. So if the host likes to get all data at every change, it must send voeGetDefinitionRequest right after getting the change notification"
+                ]
+            }
+        },
+        "iqb:response type": {
+            "title": "response type",
+            "type": "string",
+            "_display": {
+                "placeholder": "name@version major.minor"
+            }
+        },
+        "iqb:definition type": {
+            "title": "definition type",
+            "type": "string",
+            "_display": {
+                "placeholder": "name@version major.minor"
+            }
         }
-    }
+    },
+    "required": [
+        "id",
+        "softwareVersion",
+        "iqb:type",
+        "name"
+    ]
 }
