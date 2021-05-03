@@ -519,7 +519,7 @@
                 }
             }
         },
-        "iqb:not-supported-features-player": {
+        "iqb:not-supported-features-editor": {
             "title": "Not-supported-features-player",
             "description": "Features that are exclusive to the player and not supported",
             "type": "array",
@@ -528,13 +528,6 @@
                 "enum": [
                     "report-eager | the editor will send data only on-demand. So if the host likes to get all data at every change, it must send voeGetDefinitionRequest right after getting the change notification"
                 ]
-            }
-        },
-        "iqb:response type": {
-            "title": "response type",
-            "type": "string",
-            "_display": {
-                "placeholder": "name@version major.minor"
             }
         },
         "iqb:definition type": {
@@ -546,7 +539,7 @@
         }
     },
     "required": [
-        "id",
+        "identifier",
         "softwareVersion",
         "iqb:type",
         "name"

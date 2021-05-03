@@ -551,7 +551,7 @@
         }
     },
     "required": [
-        "id",
+        "identifier",
         "softwareVersion",
         "iqb:type",
         "name"
