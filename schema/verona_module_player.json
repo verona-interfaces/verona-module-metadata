@@ -8,7 +8,7 @@
         "@context": [
             "https://raw.githubusercontent.com/verona-interfaces/metadata/master/schema/context.jsonld"
         ],
-        "type": "SoftwareApplication"
+        "@type": "SoftwareApplication"
     },
     "properties": {
         "iqb:type": {
@@ -23,7 +23,7 @@
                 ]
             }
         },
-        "id": {
+        "identifier": {
             "title": "ID",
             "description": "ID of the verona module",
             "type": "string",
