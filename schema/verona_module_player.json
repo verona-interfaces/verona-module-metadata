@@ -225,13 +225,13 @@
                             "zu"
                         ]
                     },
-                    "value": {
+                    "name": {
                         "type": "string"
                     }
                 },
                 "required": [
                     "inLanguage",
-                    "value"
+                    "name"
                 ]
             }
         },
@@ -431,7 +431,7 @@
                             "zu"
                         ]
                     },
-                    "value": {
+                    "description": {
                         "type": "string",
                         "_display": {
                             "rows": 4
