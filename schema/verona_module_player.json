@@ -14,11 +14,14 @@
         "iqb:type": {
             "title": "Type",
             "description": "Type of a verona module",
-            "type": "string",
-            "enum": [
-                "Editor",
-                "Player"
-            ]
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Player",
+                    "Editor"
+                ]
+            }
         },
         "id": {
             "title": "ID",
@@ -485,7 +488,17 @@
             "description": "Repository in which the verona module code can be found",
             "type": "object",
             "properties": {
-                "Classs": {
+                "@type": {
+                    "title": "Context",
+                    "type": "string",
+                    "enum": [
+                        "SoftwareSourceCode"
+                    ],
+                    "_display": {
+                        "placeholder": "Please set this to SoftwareSourceCode"
+                    }
+                },
+                "Class": {
                     "title": "Type",
                     "description": "Type of repository",
                     "type": "string",
