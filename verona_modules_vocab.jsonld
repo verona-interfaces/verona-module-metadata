@@ -1,6 +1,6 @@
 {
     "@context": {
-        "verona": "https://w3id.org/iqb/verona-modules-vocab#",
+        "verona": "https://w3id.org/iqb/verona-modules#",
         "rdf": "https://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "https://www.w3.org/2000/01/rdf-schema#",
         "xsd": "https://www.w3.org/2001/XMLSchema#",
@@ -43,15 +43,35 @@
         "preferredNamespaceUri": "https://w3id.org/iqb/verona-modules-vocab#",
         "defines": [
             {
-                "@id": "verona:type",
+                "@id": "verona:editor",
                 "@type": ["rdfs:Class", "skos:Concept"],
                 "label": [
                     {
-                        "@value": "Verona Modul Typ",
+                        "@value": "Verona Modul Typ: Editor",
                         "@language": "de"
                     },
                     {
-                        "@value": "Verona module type",
+                        "@value": "Verona module type: editor",
+                        "@language": "en"
+                    }
+                ],
+                "comment": [
+                    {
+                        "@value": "Typ eines Verona Moduls des IQB",
+                        "@language": "de"
+                    }
+                ]
+            },
+            {
+                "@id": "verona:player",
+                "@type": ["rdfs:Class", "skos:Concept"],
+                "label": [
+                    {
+                        "@value": "Verona Modul Typ: Player",
+                        "@language": "de"
+                    },
+                    {
+                        "@value": "Verona module type: Player",
                         "@language": "en"
                     }
                 ],
@@ -85,6 +105,22 @@
                         "@language": "en"
                     }
                 ],
+                "domain": ["verona:editor", "verona:player"],
+                "range": "xsd:string"
+            },
+            {
+                "@id": "verona:description",
+                "@type": "rdf:Property",
+                "label": [
+                    {
+                        "@value": "Beschreibung",
+                        "@language": "de"
+                    },
+                    {
+                        "@value": "Description",
+                        "@language": "en"
+                    }
+                ],
                 "domain": "verona:type",
                 "range": "xsd:string"
             },
@@ -103,7 +139,7 @@
                         "@language": "de"
                     }
                 ],
-                "domain": "verona:type",
+                "domain": ["verona:editor", "verona:player"],
                 "range": "xsd:string"
             },
             {
@@ -121,7 +157,7 @@
                         "@language": "de"
                     }
                 ],
-                "domain": "verona:type",
+                "domain": ["verona:editor", "verona:player"],
                 "range": "xsd:string"
             },
             {
@@ -220,6 +256,22 @@
                     }
                 ],
                 "domain": "verona:maintainer",
+                "range": "xsd:string"
+            },
+            {
+                "@id": "verona:notSupportedFeatures",
+                "@type": "rdf:Property",
+                "label": [
+                    {
+                        "@value": "Features die nicht von diesem Verona Modul unterstützt werden",
+                        "language": "de"
+                    },
+                    {
+                        "@value": "Features that are not supported by this verona module",
+                        "@language": "en"
+                    }
+                ],
+                "domain": ["verona:editor", "verona:player"],
                 "range": "xsd:string"
             }
         ]
