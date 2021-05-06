@@ -1,6 +1,6 @@
 {
     "@context": {
-        "verona": "https://w3id.org/iqb/verona-modules-vocab#",
+        "verona": "https://w3id.org/iqb/verona-modules#",
         "editor": "verona:editor",
         "player": "verona:player",
         "name": { "@id": "verona:name", "@container": "@language"},
@@ -40,7 +40,7 @@
             },
             "repository": {
                 "repoType": "git",
-                "repoURL": "https://github.com/iqb-berlin/verona-editor-plaintext"
+                "repoURL": "https://github.com/iqb-berlin?q=player&type=&language=&sort="
             },
             "notSupportedFeature": [
                 "stop-continue",

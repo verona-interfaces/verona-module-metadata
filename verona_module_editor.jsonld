@@ -1,6 +1,6 @@
 {
     "@context": {
-        "verona": "https://w3id.org/iqb/verona-modules-vocab#",
+        "verona": "https://w3id.org/iqb/verona-modules#",
         "editor": "verona:editor",
         "player": "verona:player",
         "name": { "@id": "verona:name", "@container": "@language"},
