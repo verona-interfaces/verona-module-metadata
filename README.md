@@ -20,6 +20,8 @@ This class defines the type of a verona module as "**Editor**". It has the follo
 **notSupportedFeature**: A list of features that are not supported. The possible values are:
 * report-eager 
 
+An example implementation of this class can be found [here](https://github.com/verona-interfaces/metadata/blob/master/verona_module_editor.jsonld)
+
 ### Class: Player
 This class defines the type of a verona module as "**Player**". It has the following properties  
 **id**: Unique id for a module (This is relevant for the URL scheme)  
@@ -34,6 +36,8 @@ This class defines the type of a verona module as "**Player**". It has the follo
 * log-policy 
 * paging-mode 
 * navigation-denied
+
+An example implementation of this class can be found [here](https://github.com/verona-interfaces/metadata/blob/master/verona_module_player.jsonld)
 
 ### Class: Maintainer
 This class defines the maintainer of a verona module. This represents a person or organization that is responsible for this module. It has the following properties:  
