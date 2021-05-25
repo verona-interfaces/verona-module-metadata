@@ -31,12 +31,12 @@
             "de": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
             "en": "IQB - Institute for Educational Quality Improvement"
         },
-        "URL": "https://www.iqb.hu-berlin.de",
+        "url": "https://www.iqb.hu-berlin.de",
         "email": "iqb-tbadev@hu-berlin.de"
     },
     "repository": {
         "repoType": "git",
-        "URL": "https://github.com/iqb-berlin?q=player&type=&language=&sort="
+        "url": "https://github.com/iqb-berlin?q=player&type=&language=&sort="
     },
     "notSupportedFeature": [
         "stop-continue",
