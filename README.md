@@ -40,7 +40,7 @@ This class defines the type of a verona module as "**Player**". It has the follo
 An example implementation of this class can be found [here](https://github.com/verona-interfaces/metadata/blob/master/verona_module_player.jsonld)
 
 ### Class: Maintainer
-This class defines the maintainer of a verona module. This represents a person or organization that is responsible for this module. It has the following properties:  
+This class defines the maintainer of a verona module. This represents a person or organization that is responsible for a module. It has the following properties:  
 **name**: Name of a maintainer. Multiple languages are supported   
 **url**: The URL to a website belonging to the maintainer.  
 **email**: The email address of the maintainer.  
