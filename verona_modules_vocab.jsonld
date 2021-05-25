@@ -195,7 +195,7 @@
                 "range": "xsd:string"
             },
             {
-                "@id": "verona:URL",
+                "@id": "verona:url",
                 "@type": "rdf:Property",
                 "label": [
                     {

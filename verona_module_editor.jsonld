@@ -9,7 +9,7 @@
         "apiVersion": "verona:apiVersion",
         "repository": "verona:repository",
         "repoType": "verona:repoType",
-        "URL": "verona:URL",
+        "url": "verona:url",
         "maintainer": "verona:maintainer",
         "email": "verona:email",
         "notSupportedFeature": "verona:notSupportedFeatures"
