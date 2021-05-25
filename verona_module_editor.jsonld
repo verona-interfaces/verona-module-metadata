@@ -9,11 +9,9 @@
         "apiVersion": "verona:apiVersion",
         "repository": "verona:repository",
         "repoType": "verona:repoType",
-        "repoURL": "verona:repoURL",
+        "URL": "verona:URL",
         "maintainer": "verona:maintainer",
-        "maintainerName": { "@id": "verona:maintainerName", "@container": "@language"},
-        "maintainerEmail": "verona:maintainerEmail",
-        "maintainerURL": "verona:maintainerURL",
+        "email": "verona:email",
         "notSupportedFeature": "verona:notSupportedFeatures"
     },
     "@graph": [
@@ -31,12 +29,12 @@
             "version": "1.0.0-beta",
             "apiVersion": "2.0",
             "maintainer": {
-                "maintainerName": {
+                "name": {
                     "de": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
                     "en": "IQB - Institute for Educational Quality Improvement"
                 },
-                "maintainerURL": "https://www.iqb.hu-berlin.de",
-                "maintainerEmail": "iqb-tbadev@hu-berlin.de"
+                "URL": "https://www.iqb.hu-berlin.de",
+                "email": "iqb-tbadev@hu-berlin.de"
             },
             "repository": {
                 "repoType": "git",

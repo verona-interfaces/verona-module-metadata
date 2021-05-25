@@ -97,15 +97,15 @@
                 ],
                 "comment": [
                     {
-                        "@value": "Name eines Verona Moduls",
+                        "@value": "Name eines Verona Moduls oder einer verantwortlichen Person",
                         "@language": "de"
                     },
                     {
-                        "@value": "Name of a verona module",
+                        "@value": "Name of a verona module or a responsible person",
                         "@language": "en"
                     }
                 ],
-                "domain": ["verona:editor", "verona:player"],
+                "domain": ["verona:editor", "verona:player","verona:maintainer"],
                 "range": "xsd:string"
             },
             {
@@ -195,21 +195,21 @@
                 "range": "xsd:string"
             },
             {
-                "@id": "verona:repoURL",
+                "@id": "verona:URL",
                 "@type": "rdf:Property",
                 "label": [
                     {
-                        "@value": "Repository URL",
+                        "@value": "URL of a ressource",
                         "@language": "de"
                     }
                 ],
                 "comment": [
                     {
-                        "@value": "Die URL des Repository",
+                        "@value": "Die URL der jeweiligen Ressource",
                         "@language": "de"
                     }
                 ],
-                "domain": "verona:repository",
+                "domain": ["verona:repository", "verona:maintainer"],
                 "range": "xsd:string"
             },
             {
@@ -223,35 +223,11 @@
                 ]
             },
             {
-                "@id": "verona:maintainerName",
+                "@id": "verona:email",
                 "@type": "rdf:Property",
                 "label": [
                     {
-                        "@value": "Maintainer Name",
-                        "@language": "de"
-                    }
-                ],
-                "domain": "verona:maintainer",
-                "range": "xsd:string"
-            },
-            {
-                "@id": "verona:maintainerURL",
-                "@type": "rdf:Property",
-                "label": [
-                    {
-                        "@value": "Maintainer URL",
-                        "@language": "de"
-                    }
-                ],
-                "domain": "verona:maintainer",
-                "range": "xsd:string"
-            },
-            {
-                "@id": "verona:maintainerEmail",
-                "@type": "rdf:Property",
-                "label": [
-                    {
-                        "@value": "Maintainer Email",
+                        "@value": "Email of a person or institution",
                         "@language": "de"
                     }
                 ],
