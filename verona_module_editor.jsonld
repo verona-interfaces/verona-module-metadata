@@ -14,35 +14,31 @@
         "email": "verona:email",
         "notSupportedFeature": "verona:notSupportedFeatures"
     },
-    "@graph": [
-        {
-            "@type": "editor",
-            "@id": "iqb-verona-plaintext-editor",
-            "name": {
-                "de": "IQB-Editor für Text",
-                "en": "IQB editor for plain text"
-            },
-            "description": {
-                "de": "Dieser Editor verarbeitet Aufgaben-/Seitendefinitionen als Text. Dies ist sinnvoll z. B. für Xml-, Html- oder scriptbasierte Formate, für die kein separater Editor bereitgestellt wird.\nAchtung: Da grundsätzlich alle Unit-Definitionen als String/Text gespeichert sind, könnten auch interne binäre Formate oder JSON mit diesem Editor bearbeitet werden. Für diese Formate sollten jedoch andere Editoren genutzt werden, die die Konsistenz der Daten sicherstellen. Eine Bearbeitung dieser Formate mit diesem Text-Edito kann die Aufgaben-/Seitendefinitionen unbrauchbar machen.",
-                "en": "You can use this Verona Editor for all unit definitions, because the data format of unit definitions is technically always string/text. But be careful: improper changes may damage the definition so it's not usable anymore."
-            },
-            "version": "1.0.0-beta",
-            "apiVersion": "2.0",
-            "maintainer": {
-                "name": {
-                    "de": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
-                    "en": "IQB - Institute for Educational Quality Improvement"
-                },
-                "URL": "https://www.iqb.hu-berlin.de",
-                "email": "iqb-tbadev@hu-berlin.de"
-            },
-            "repository": {
-                "repoType": "git",
-                "repoURL": "https://github.com/iqb-berlin/verona-editor-plaintext"
-            },
-            "notSupportedFeature": [
-                "report-eager"
-            ]
-        }
+    "@type": "editor",
+    "@id": "iqb-verona-plaintext-editor",
+    "name": {
+        "de": "IQB-Editor für Text",
+        "en": "IQB editor for plain text"
+    },
+    "description": {
+        "de": "Dieser Editor verarbeitet Aufgaben-/Seitendefinitionen als Text. Dies ist sinnvoll z. B. für Xml-, Html- oder scriptbasierte Formate, für die kein separater Editor bereitgestellt wird.\nAchtung: Da grundsätzlich alle Unit-Definitionen als String/Text gespeichert sind, könnten auch interne binäre Formate oder JSON mit diesem Editor bearbeitet werden. Für diese Formate sollten jedoch andere Editoren genutzt werden, die die Konsistenz der Daten sicherstellen. Eine Bearbeitung dieser Formate mit diesem Text-Edito kann die Aufgaben-/Seitendefinitionen unbrauchbar machen.",
+        "en": "You can use this Verona Editor for all unit definitions, because the data format of unit definitions is technically always string/text. But be careful: improper changes may damage the definition so it's not usable anymore."
+    },
+    "version": "1.0.0-beta",
+    "apiVersion": "2.0",
+    "maintainer": {
+        "name": {
+            "de": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
+            "en": "IQB - Institute for Educational Quality Improvement"
+        },
+        "url": "https://www.iqb.hu-berlin.de",
+        "email": "iqb-tbadev@hu-berlin.de"
+    },
+    "repository": {
+        "repoType": "git",
+        "url": "https://github.com/iqb-berlin/verona-editor-plaintext"
+    },
+    "notSupportedFeature": [
+        "report-eager"
     ]
 }
