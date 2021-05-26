@@ -27,6 +27,7 @@
     "version": "1.0.0-beta",
     "apiVersion": "2.0",
     "maintainer": {
+        "@type": "maintainer",
         "name": {
             "de": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
             "en": "IQB - Institute for Educational Quality Improvement"
@@ -35,6 +36,7 @@
         "email": "iqb-tbadev@hu-berlin.de"
     },
     "repository": {
+        "@type": "repository",
         "repoType": "git",
         "url": "https://github.com/iqb-berlin/verona-editor-plaintext"
     },
