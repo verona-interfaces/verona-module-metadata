@@ -14,14 +14,11 @@
         "iqb:type": {
             "title": "Type",
             "description": "Type of a verona module",
-            "type": "array",
-            "items": {
-                "type": "string",
-                "enum": [
-                    "Player",
-                    "Editor"
-                ]
-            }
+            "type": "string",
+            "enum": [
+                "Editor",
+                "Player"
+            ]
         },
         "identifier": {
             "title": "ID",
@@ -32,41 +29,42 @@
         "name": {
             "title": "Name",
             "description": "Name of verona module",
-            "type": "array",
-            "items": {
+            "name": {
                 "type": "object",
                 "properties": {
-                    "inLanguage": {
-                        "$ref": "https://raw.githubusercontent.com/verona-interfaces/metadata/master/schema/inLanguage.json"
+                    "@value": {
+                        "title": "value of the name",
+                        "type": "string"
                     },
-                    "name": {
+                    "@language": {
+                        "title": "Language of the name",
                         "type": "string"
                     }
-                },
-                "required": [
-                    "inLanguage",
-                    "name"
-                ]
-            }
+                }
+            },
+            "required": [
+                "@value",
+                "@language"
+            ]
         },
         "description": {
             "title": "Description",
             "description": "Description of a verona module",
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "inLanguage": {
-                        "$ref": "https://raw.githubusercontent.com/verona-interfaces/metadata/master/schema/inLanguage.json"
-                    },
-                    "description": {
-                        "type": "string",
-                        "_display": {
-                            "rows": 4
-                        }
-                    }
+            "type": "object",
+            "properties": {
+                "@value": {
+                    "title": "value of the description",
+                    "type": "string"
+                },
+                "@language": {
+                    "title": "Language of the description",
+                    "type": "string"
                 }
-            }
+            },
+            "required": [
+                "@value",
+                "@language"
+            ]
         },
         "softwareVersion": {
             "title": "Version",
@@ -98,22 +96,21 @@
                 "name": {
                     "title": "Name",
                     "description": "Name of maintainer",
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "inLanguage": {
-                                "$ref": "https://raw.githubusercontent.com/verona-interfaces/metadata/master/schema/inLanguage.json"
-                            },
-                            "name": {
-                                "type": "string"
-                            }
+                    "type": "object",
+                    "properties": {
+                        "@value": {
+                            "title": "Name of the maintainer",
+                            "type": "string"
                         },
-                        "required": [
-                            "inLanguage",
-                            "name"
-                        ]
-                    }
+                        "@language": {
+                            "title": "Language of the name",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "@value",
+                        "@language"
+                    ]
                 },
                 "url": {
                     "title": "URL",
@@ -125,7 +122,12 @@
                     "type": "string",
                     "format": "email"
                 }
-            }
+            },
+            "required": [
+                "url",
+                "email",
+                "name"
+            ]
         },
         "SoftwareSourceCode": {
             "title": "Repository",
@@ -186,6 +188,7 @@
         "identifier",
         "softwareVersion",
         "iqb:type",
-        "name"
+        "name",
+        "maintainer"
     ]
 }
