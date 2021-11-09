@@ -14,14 +14,11 @@
         "iqb:type": {
             "title": "Type",
             "description": "Type of a verona module",
-            "type": "array",
-            "items": {
-                "type": "string",
-                "enum": [
-                    "Player",
-                    "Editor"
-                ]
-            }
+            "type": "string",
+            "enum": [
+                "Player",
+                "Editor"
+            ]
         },
         "identifier": {
             "title": "ID",
@@ -34,18 +31,19 @@
             "description": "Name of verona module",
             "type": "array",
             "items": {
-                "type": "object",
                 "properties": {
-                    "inLanguage": {
-                        "$ref": "https://raw.githubusercontent.com/verona-interfaces/metadata/master/schema/inLanguage.json"
+                    "@value": {
+                        "title": "value of the name",
+                        "type": "string"
                     },
-                    "name": {
+                    "@language": {
+                        "title": "Language of the name",
                         "type": "string"
                     }
                 },
                 "required": [
-                    "inLanguage",
-                    "name"
+                    "@value",
+                    "@language"
                 ]
             }
         },
@@ -54,18 +52,20 @@
             "description": "Description of a verona module",
             "type": "array",
             "items": {
-                "type": "object",
                 "properties": {
-                    "inLanguage": {
-                        "$ref": "https://raw.githubusercontent.com/verona-interfaces/metadata/master/schema/inLanguage.json"
+                    "@value": {
+                        "title": "value of the name",
+                        "type": "string"
                     },
-                    "description": {
-                        "type": "string",
-                        "_display": {
-                            "rows": 4
-                        }
+                    "@language": {
+                        "title": "Language of the name",
+                        "type": "string"
                     }
-                }
+                },
+                "required": [
+                    "@value",
+                    "@language"
+                ]
             }
         },
         "softwareVersion": {
@@ -88,30 +88,31 @@
             "type": "object",
             "properties": {
                 "@type": {
-                  "title": "Type",
-                  "type": "string",
-                  "enum": [
-                      "Person",
-                      "Organisation"
-                  ]  
+                    "title": "Type",
+                    "type": "string",
+                    "enum": [
+                        "Person",
+                        "Organisation"
+                    ]
                 },
                 "name": {
                     "title": "Name",
                     "description": "Name of maintainer",
                     "type": "array",
                     "items": {
-                        "type": "object",
                         "properties": {
-                            "inLanguage": {
-                                "$ref": "https://raw.githubusercontent.com/verona-interfaces/metadata/master/schema/inLanguage.json"
+                            "@value": {
+                                "title": "value of the name",
+                                "type": "string"
                             },
-                            "name": {
+                            "@language": {
+                                "title": "Language of the name",
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "inLanguage",
-                            "name"
+                            "@value",
+                            "@language"
                         ]
                     }
                 },

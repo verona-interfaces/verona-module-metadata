@@ -3,8 +3,8 @@
         "verona": "https://w3id.org/iqb/verona-modules#",
         "editor": "verona:editor",
         "player": "verona:player",
-        "name": { "@id": "verona:name", "@container": "@language"},
-        "description": { "@id": "verona:description", "@container": "@language"},
+        "name": "verona:name",
+        "description": "verona:description",
         "version": "verona:version",
         "apiVersion": "verona:apiVersion",
         "repository": "verona:repository",
@@ -16,22 +16,40 @@
     },
     "@type": "player",
     "@id": "iqb-verona-player",
-    "name": {
-        "de": "IQB-Player",
-        "en": "IQB player"
-    },
-    "description": {
-        "de": "Dieser Player kann benutzt werden um diverse Inhalte abzuspielen",
-        "en": "This player can be used to play different kinds of media"
-    },
+    "name": [
+        {
+            "@value": "IQB Player",
+            "@language": "de"
+        },
+        {
+            "@value": "IQB Player",
+            "@language": "en"
+        }
+    ],
+    "description": [
+        {
+        "@value": "Dieser Player kann benutzt werden um diverse Inhalte abzuspielen",
+        "@language": "de"
+        },
+        {
+        "@value": "This player can be used to play different kinds of media",
+        "@language": "en"
+        }
+    ],
     "version": "1.0.0-beta",
     "apiVersion": "2.0",
     "maintainer": {
         "@type": "maintainer",
-        "Name": {
-            "de": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
-            "en": "IQB - Institute for Educational Quality Improvement"
-        },
+        "name": [
+            {
+                "@value": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
+                "@language": "de"
+            },
+            {
+                "@value": "IQB - Institute for Educational Quality Improvement",
+                "@language": "en"
+            }
+        ],
         "url": "https://www.iqb.hu-berlin.de",
         "email": "iqb-tbadev@hu-berlin.de"
     },

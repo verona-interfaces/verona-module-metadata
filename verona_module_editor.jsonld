@@ -3,8 +3,14 @@
         "verona": "https://w3id.org/iqb/verona-modules#",
         "editor": "verona:editor",
         "player": "verona:player",
-        "name": { "@id": "verona:name", "@container": "@language"},
-        "description": { "@id": "verona:description", "@container": "@language"},
+        "name": {
+            "@value": "verona:name",
+            "@language": "language"
+        },
+        "description": {
+            "@value": "verona:description",
+            "@language": "language"
+        },
         "version": "verona:version",
         "apiVersion": "verona:apiVersion",
         "repository": "verona:repository",
@@ -16,22 +22,40 @@
     },
     "@type": "editor",
     "@id": "iqb-verona-plaintext-editor",
-    "name": {
-        "de": "IQB-Editor für Text",
-        "en": "IQB editor for plain text"
-    },
-    "description": {
-        "de": "Dieser Editor verarbeitet Aufgaben-/Seitendefinitionen als Text. Dies ist sinnvoll z. B. für Xml-, Html- oder scriptbasierte Formate, für die kein separater Editor bereitgestellt wird.\nAchtung: Da grundsätzlich alle Unit-Definitionen als String/Text gespeichert sind, könnten auch interne binäre Formate oder JSON mit diesem Editor bearbeitet werden. Für diese Formate sollten jedoch andere Editoren genutzt werden, die die Konsistenz der Daten sicherstellen. Eine Bearbeitung dieser Formate mit diesem Text-Edito kann die Aufgaben-/Seitendefinitionen unbrauchbar machen.",
-        "en": "You can use this Verona Editor for all unit definitions, because the data format of unit definitions is technically always string/text. But be careful: improper changes may damage the definition so it's not usable anymore."
-    },
+    "name": [
+        {
+            "@value": "Text Editor",
+            "@language": "de"
+        },
+        {
+            "@value": "Plaintext editor",
+            "@language": "en"
+        }
+    ],
+    "description": [
+        {
+            "@value": "Dieser Editor verarbeitet Aufgaben-/Seitendefinitionen als Text. Dies ist sinnvoll z. B. für Xml-, Html- oder scriptbasierte Formate, für die kein separater Editor bereitgestellt wird.\nAchtung: Da grundsätzlich alle Unit-Definitionen als String/Text gespeichert sind, könnten auch interne binäre Formate oder JSON mit diesem Editor bearbeitet werden. Für diese Formate sollten jedoch andere Editoren genutzt werden, die die Konsistenz der Daten sicherstellen. Eine Bearbeitung dieser Formate mit diesem Text-Edito kann die Aufgaben-/Seitendefinitionen unbrauchbar machen.",
+            "@language": "de"
+        },
+        {
+            "@value": "You can use this Verona Editor for all unit definitions, because the data format of unit definitions is technically always string/text. But be careful: improper changes may damage the definition so it's not usable anymore.",
+            "@language": "en"
+        }
+    ],
     "version": "1.0.0-beta",
     "apiVersion": "2.0",
     "maintainer": {
         "@type": "maintainer",
-        "name": {
-            "de": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
-            "en": "IQB - Institute for Educational Quality Improvement"
-        },
+        "name": [
+            {
+                "@value": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
+                "@language": "de"
+            },
+            {
+                "@value": "IQB - Institute for Educational Quality Improvement",
+                "@language": "en"
+            }
+        ],
         "url": "https://www.iqb.hu-berlin.de",
         "email": "iqb-tbadev@hu-berlin.de"
     },

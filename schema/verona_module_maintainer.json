@@ -13,9 +13,22 @@
             "title": "Name",
             "description": "Name of the maintainer of a module",
             "type": "array",
-            "items": {
-                "type": "string"
-            }
+                "items": {
+                    "properties": {
+                        "@value": {
+                            "title": "value of the name",
+                            "type": "string"
+                        },
+                        "@language": {
+                            "title": "Language of the name",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "@value",
+                        "@language"
+                    ]
+                }
         },
         "URL": {
             "title": "URL",

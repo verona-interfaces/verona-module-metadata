@@ -30,7 +30,30 @@
             "title": "Name",
             "description": "Name of verona module",
             "name": {
-                "type": "object",
+                "type": "array",
+                "items": {
+                    "properties": {
+                        "@value": {
+                            "title": "value of the name",
+                            "type": "string"
+                        },
+                        "@language": {
+                            "title": "Language of the name",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "@value",
+                        "@language"
+                    ]
+                }
+            }
+        },
+        "description": {
+            "title": "Description",
+            "description": "Description of a verona module",
+            "type": "array",
+            "items": {
                 "properties": {
                     "@value": {
                         "title": "value of the name",
@@ -40,31 +63,12 @@
                         "title": "Language of the name",
                         "type": "string"
                     }
-                }
-            },
-            "required": [
-                "@value",
-                "@language"
-            ]
-        },
-        "description": {
-            "title": "Description",
-            "description": "Description of a verona module",
-            "type": "object",
-            "properties": {
-                "@value": {
-                    "title": "value of the description",
-                    "type": "string"
                 },
-                "@language": {
-                    "title": "Language of the description",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "@value",
-                "@language"
-            ]
+                "required": [
+                    "@value",
+                    "@language"
+                ]
+            }
         },
         "softwareVersion": {
             "title": "Version",
@@ -86,31 +90,33 @@
             "type": "object",
             "properties": {
                 "@type": {
-                  "title": "Type",
-                  "type": "string",
-                  "enum": [
-                      "Person",
-                      "Organisation"
-                  ]  
+                    "title": "Type",
+                    "type": "string",
+                    "enum": [
+                        "Person",
+                        "Organisation"
+                    ]
                 },
                 "name": {
                     "title": "Name",
                     "description": "Name of maintainer",
-                    "type": "object",
-                    "properties": {
-                        "@value": {
-                            "title": "Name of the maintainer",
-                            "type": "string"
+                    "type": "array",
+                    "items": {
+                        "properties": {
+                            "@value": {
+                                "title": "value of the name",
+                                "type": "string"
+                            },
+                            "@language": {
+                                "title": "Language of the name",
+                                "type": "string"
+                            }
                         },
-                        "@language": {
-                            "title": "Language of the name",
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "@value",
-                        "@language"
-                    ]
+                        "required": [
+                            "@value",
+                            "@language"
+                        ]
+                    }
                 },
                 "url": {
                     "title": "URL",
