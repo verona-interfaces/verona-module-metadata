@@ -1,0 +1,164 @@
+{
+  "id": "https://raw.githubusercontent.com/verona-interfaces/metadata/master/verona-module-metadata.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Verona Module Metadata",
+  "type": "object",
+  "default": {
+    "$schema": "https://raw.githubusercontent.com/verona-interfaces/metadata/master/verona-module-metadata.json"
+  },
+  "properties": {
+    "type": {
+      "title": "Verona Module Type",
+      "type": "string",
+      "enum": [
+        "editor",
+        "player"
+      ]
+    },
+    "id": {
+      "title": "Identifier",
+      "description": "The id will be used as reference by any application using this module",
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+    },
+    "name": {
+      "title": "Name",
+      "description": "Name to be used in lists or forms when the identifier is too short",
+      "$ref": "#/$defs/languageTaggedStrings"
+    },
+    "description": {
+      "title": "Description",
+      "description": "The description should include any use case and should refer to used data formats.",
+      "$ref": "#/$defs/languageTaggedStrings"
+    },
+    "version": {
+      "title": "Version in SemVer2 notation",
+      "description": "Semantic Versioning 2.0.0 required.",
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+      "examples": ["1.5.2", "0.12.4-beta", "12.0.0-rc.1"],
+      "_display": {
+        "placeholder": "MAJOR.MINOR.PATCH"
+      }
+    },
+    "specVersion": {
+      "title": "Version of Supported Module Specification",
+      "description": "Version of the Verona specification supported by this module in the form 'MAJOR.MINOR'.",
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$",
+      "examples": ["1.5", "4.12"],
+      "_display": {
+        "placeholder": "MAJOR.MINOR"
+      }
+    },
+    "notSupportedFeatures": {
+      "title": "List of all features not supported",
+      "description": "Use the predefined keys to name not supported features.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "stop-continue",
+          "focus-notify",
+          "report-on-demand",
+          "log-policy",
+          "paging-mode",
+          "navigation-denied",
+          "report-eager"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "maintainer": {
+      "title": "Maintainer",
+      "description": "Maintainer of the verona module",
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "Name of maintainer",
+          "$ref": "#/$defs/languageTaggedStrings"
+        },
+        "url": {
+          "title": "URL",
+          "type": "string",
+          "format": "uri"
+        },
+        "email": {
+          "title": "E-Mail",
+          "type": "string",
+          "format": "email"
+        }
+      }
+    },
+    "code": {
+      "title": "Code",
+      "description": "Data about source code",
+      "type": "object",
+      "properties": {
+        "repositoryType": {
+          "title": "Repository Type",
+          "type": "string",
+          "default": "git",
+          "examples": [
+            "svn",
+            "mercurial"
+          ]
+        },
+        "repositoryUrl": {
+          "title": "Repository Url",
+          "type": "string",
+          "format": "uri"
+        },
+        "licenseType": {
+          "title": "License Type",
+          "type": "string",
+          "default": "MIT",
+          "examples": [
+            "BSD-3-Clause",
+            "ISC"
+          ]
+        },
+        "licenseUrl": {
+          "title": "License Url",
+          "type": "string",
+          "format": "uri",
+          "default": "https://opensource.org/licenses/MIT"
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "type",
+    "name",
+    "specVersion"
+  ],
+  "$defs": {
+    "languageTaggedStrings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "lang": {
+            "type": "string",
+            "title": "Language as ISO 639-1 Alpha-2 code",
+            "description": "This language code declares the language of the value.",
+            "pattern": "^[a-z]{2}$",
+            "default": "de",
+            "examples": ["en", "fr"]
+          },
+          "value": {
+            "title": "Value",
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": ["value"]
+      },
+      "minItems": 1
+    }
+  }
+}
