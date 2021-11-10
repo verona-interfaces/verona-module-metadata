@@ -1,0 +1,49 @@
+{
+    "$id": "https://raw.githubusercontent.com/verona-interfaces/metadata/master/schema/verona_module_maintainer.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Maintainer",
+    "description": "Maintainer of a module",
+    "type": "object",
+    "default": {
+        "@context": "https://schema.org/",
+        "@type": "maintainer"
+    },
+    "properties": {
+        "Name": {
+            "title": "Name",
+            "description": "Name of the maintainer of a module",
+            "type": "array",
+                "items": {
+                    "properties": {
+                        "@value": {
+                            "title": "value of the name",
+                            "type": "string"
+                        },
+                        "@language": {
+                            "title": "Language of the name",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "@value",
+                        "@language"
+                    ]
+                }
+        },
+        "URL": {
+            "title": "URL",
+            "description": "URL of a website of the maintainer",
+            "type": "string",
+            "format": "uri"
+        },
+        "E-Mail": {
+            "title": "E-Mail",
+            "description": "E-Mail address of the maintainer",
+            "type": "string",
+            "format": "email"
+        }
+    },
+    "required": [
+        "Name"
+    ]
+}

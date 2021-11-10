@@ -1,0 +1,69 @@
+{
+    "@context": {
+        "verona": "https://w3id.org/iqb/verona-modules#",
+        "editor": "verona:editor",
+        "player": "verona:player",
+        "name": "verona:name",
+        "description": "verona:description",
+        "version": "verona:version",
+        "apiVersion": "verona:apiVersion",
+        "repository": "verona:repository",
+        "repoType": "verona:repoType",
+        "url": "verona:url",
+        "maintainer": "verona:maintainer",
+        "Email": "verona:email",
+        "notSupportedFeature": "verona:notSupportedFeatures"
+    },
+    "@type": "player",
+    "@id": "iqb-verona-player",
+    "name": [
+        {
+            "@value": "IQB Player",
+            "@language": "de"
+        },
+        {
+            "@value": "IQB Player",
+            "@language": "en"
+        }
+    ],
+    "description": [
+        {
+        "@value": "Dieser Player kann benutzt werden um diverse Inhalte abzuspielen",
+        "@language": "de"
+        },
+        {
+        "@value": "This player can be used to play different kinds of media",
+        "@language": "en"
+        }
+    ],
+    "version": "1.0.0-beta",
+    "apiVersion": "2.0",
+    "maintainer": {
+        "@type": "maintainer",
+        "name": [
+            {
+                "@value": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
+                "@language": "de"
+            },
+            {
+                "@value": "IQB - Institute for Educational Quality Improvement",
+                "@language": "en"
+            }
+        ],
+        "url": "https://www.iqb.hu-berlin.de",
+        "email": "iqb-tbadev@hu-berlin.de"
+    },
+    "repository": {
+        "@type": "repository",
+        "repoType": "git",
+        "url": "https://github.com/iqb-berlin?q=player&type=&language=&sort="
+    },
+    "notSupportedFeature": [
+        "stop-continue",
+        "focus-notify",
+        "report-on-demand",
+        "log-policy",
+        "paging-mode",
+        "navigation-denied"
+    ]
+}

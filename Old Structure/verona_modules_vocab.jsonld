@@ -1,0 +1,254 @@
+{
+    "@context": {
+        "verona": "https://w3id.org/iqb/verona-modules#",
+        "rdf": "https://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "https://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "https://www.w3.org/2001/XMLSchema#",
+        "owl": "https://www.w3.org/2002/07/owl#",
+        "skos": "https://www.w3.org/2004/02/skos/core#",
+        "dct": "https://purl.org/dc/terms/",
+        "schema": "https://schema.org/",
+        "vann": "http://purl.org/vocab/vann/",
+        "label": "rdfs:label",
+        "description": "dct:description",
+        "preferredNamespacePrefix": "vann:preferredNamespacePrefix",
+        "preferredNamespaceUri": "vann:prefferedNamespaceUri"
+    },
+        "@id": "https://w3id.org/iqb/verona-modules-vocab",
+        "@type": "owl:Ontology",
+        "label":
+        [
+            {
+                "@value": "Verona Module Vokabular",
+                "@language": "de"
+            },
+            {
+                "@value": "Verona module vocabulary",
+                "@language": "en"
+            }
+        ],
+        "description": 
+        [
+            {
+                "@value": "Dieses Vokabular erlaubt es uns die Verona Module des IQB zu beschreiben",
+                "@language": "de"
+            },
+            {
+                "@value": "This vocabulary allows to describe the verona modules of IQB.",
+                "@language": "en"
+            }
+        ],
+        "creator": "IQB",
+        "prefereredNamespacePrefix": "verona",
+        "preferredNamespaceUri": "https://w3id.org/iqb/verona-modules-vocab#",
+        "defines": [
+            {
+                "@id": "verona:editor",
+                "@type": ["rdfs:Class", "skos:Concept"],
+                "label": [
+                    {
+                        "@value": "Verona Modul Typ: Editor",
+                        "@language": "de"
+                    },
+                    {
+                        "@value": "Verona module type: editor",
+                        "@language": "en"
+                    }
+                ],
+                "comment": [
+                    {
+                        "@value": "Typ eines Verona Moduls des IQB",
+                        "@language": "de"
+                    }
+                ]
+            },
+            {
+                "@id": "verona:player",
+                "@type": ["rdfs:Class", "skos:Concept"],
+                "label": [
+                    {
+                        "@value": "Verona Modul Typ: Player",
+                        "@language": "de"
+                    },
+                    {
+                        "@value": "Verona module type: Player",
+                        "@language": "en"
+                    }
+                ],
+                "comment": [
+                    {
+                        "@value": "Typ eines Verona Moduls des IQB",
+                        "@language": "de"
+                    }
+                ]
+            },
+            {
+                "@id": "verona:name",
+                "@type": "rdf:Property",
+                "label": [
+                    {
+                        "@value": "Name",
+                        "@language": "de"
+                    },
+                    {
+                        "@value": "Name",
+                        "@language": "en"
+                    }
+                ],
+                "comment": [
+                    {
+                        "@value": "Name eines Verona Moduls oder einer verantwortlichen Person",
+                        "@language": "de"
+                    },
+                    {
+                        "@value": "Name of a verona module or a responsible person",
+                        "@language": "en"
+                    }
+                ],
+                "domain": ["verona:editor", "verona:player","verona:maintainer"],
+                "range": "xsd:string"
+            },
+            {
+                "@id": "verona:description",
+                "@type": "rdf:Property",
+                "label": [
+                    {
+                        "@value": "Beschreibung",
+                        "@language": "de"
+                    },
+                    {
+                        "@value": "Description",
+                        "@language": "en"
+                    }
+                ],
+                "domain": "verona:type",
+                "range": "xsd:string"
+            },
+            {
+                "@id": "verona:version",
+                "@type": "rdf:Property",
+                "label": [
+                    {
+                        "@value": "Versionsnummer",
+                        "@language": "de"
+                    }
+                ],
+                "comment": [
+                    {
+                        "@value": "Versionsnummer eines Veronamoduls",
+                        "@language": "de"
+                    }
+                ],
+                "domain": ["verona:editor", "verona:player"],
+                "range": "xsd:string"
+            },
+            {
+                "@id": "verona:apiVersion",
+                "@type": "rdf:Property",
+                "label": [
+                    {
+                        "@value": "API-Version",
+                        "@language": "de"
+                    }
+                ],
+                "comment": [
+                    {
+                        "@value": "API-Version eines Veronamoduls",
+                        "@language": "de"
+                    }
+                ],
+                "domain": ["verona:editor", "verona:player"],
+                "range": "xsd:string"
+            },
+            {
+                "@id": "verona:repository",
+                "@type": ["rdfs:Class","skos:Concept"],
+                "label": [
+                    {
+                        "@value": "Repository",
+                        "@language": "de"
+                    }
+                ],
+                "comment": [
+                    {
+                        "@value": "Repository in dem sich der Code des Veronamoduls befindet",
+                        "@language": "de"
+                    }
+                ]
+            },
+            {
+                "@id": "verona:repoType",
+                "@type": "rdf:Property",
+                "label": [
+                    {
+                        "@value": "Repository Type",
+                        "@language": "de"
+                    }
+                ],
+                "comment": [
+                    {
+                        "@value": "Der Typ des Repository",
+                        "@language": "de"
+                    }
+                ],
+                "domain": "verona:repository",
+                "range": "xsd:string"
+            },
+            {
+                "@id": "verona:url",
+                "@type": "rdf:Property",
+                "label": [
+                    {
+                        "@value": "URL of a ressource",
+                        "@language": "de"
+                    }
+                ],
+                "comment": [
+                    {
+                        "@value": "Die URL der jeweiligen Ressource",
+                        "@language": "de"
+                    }
+                ],
+                "domain": ["verona:repository", "verona:maintainer"],
+                "range": "xsd:string"
+            },
+            {
+                "@id": "verona:maintainer",
+                "@type": ["rdfs:Class","skos:Concept"],
+                "label": [
+                    {
+                        "@value": "Maintainer",
+                        "@language": "de"
+                    }
+                ]
+            },
+            {
+                "@id": "verona:email",
+                "@type": "rdf:Property",
+                "label": [
+                    {
+                        "@value": "Email of a person or institution",
+                        "@language": "de"
+                    }
+                ],
+                "domain": "verona:maintainer",
+                "range": "xsd:string"
+            },
+            {
+                "@id": "verona:notSupportedFeatures",
+                "@type": "rdf:Property",
+                "label": [
+                    {
+                        "@value": "Features die nicht von diesem Verona Modul unterstützt werden",
+                        "language": "de"
+                    },
+                    {
+                        "@value": "Features that are not supported by this verona module",
+                        "@language": "en"
+                    }
+                ],
+                "domain": ["verona:editor", "verona:player"],
+                "range": "xsd:string"
+            }
+        ]
+} 
