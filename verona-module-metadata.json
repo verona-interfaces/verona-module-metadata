@@ -64,7 +64,8 @@
           "log-policy",
           "paging-mode",
           "navigation-denied",
-          "report-eager"
+          "report-eager",
+          "variable-data"
         ]
       },
       "minItems": 1,

@@ -34,6 +34,7 @@ Possible values for `notSupportedFeatures` are:
 | `log-policy` | Player | The host sets the policy of sending logs |
 | `paging-mode` | Player | The host sets the way of presenting pages |
 | `navigation-denied` | Player | In case of denied navigation, the host let the module know and expects some visualisation of problems |
+| `variable-data` | Editor | The host needs information about variables inside the unit definition to create the coding scheme. | 
 
 ## Easy Create
 If you like to create metadata for your own Verona module, please go to [this website](https://skohub.io/editor/?schema=https://raw.githubusercontent.com/verona-interfaces/metadata/master/verona-module-metadata.json). Just fill out the form and copy&paste the metadata into your code. The data will be validated when you click "Publish".
