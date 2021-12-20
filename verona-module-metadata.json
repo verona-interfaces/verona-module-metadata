@@ -12,7 +12,8 @@
       "type": "string",
       "enum": [
         "editor",
-        "player"
+        "player",
+        "schemer"
       ]
     },
     "id": {
