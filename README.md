@@ -7,7 +7,7 @@ Verona Modules are pieces of code. They are used by (web-) applications as kind 
 ### 2.0
 * add metadata specification version to track changes
 * remove some entries in `notSupportedFeatures` for player due to removals in player specification 5.0
-* add 
+* add dependencies
 
 ## JSON
 The file type of the runtime version of Verona Modules is either Html or JavaScript. In both cases, the metadata are stored as JSON. For **Html-Files** we use JSON-LD, so all applications interested in metadata can read the metadata by looking for a script tag typed as json-ld:
