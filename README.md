@@ -3,6 +3,12 @@
 
 Verona Modules are pieces of code. They are used by (web-) applications as kind of plugins, i.e. they are loaded at runtime on demand. To ease the management of the modules, every Verona module must provide specific information about its functionality and state. Metadata like name, label, version and maintainer are essential for the interaction between module and host.
 
+## release notes
+### 2.0
+* add metadata specification version to track changes
+* remove some entries in `notSupportedFeatures` for player due to removals in player specification 5.0
+* add 
+
 ## JSON
 The file type of the runtime version of Verona Modules is either Html or JavaScript. In both cases, the metadata are stored as JSON. For **Html-Files** we use JSON-LD, so all applications interested in metadata can read the metadata by looking for a script tag typed as json-ld:
 ```html
@@ -28,9 +34,7 @@ Possible values for `notSupportedFeatures` are:
 
 | Key | Module(s) | Description |
 | ------ | ------ | ----- |
-| `stop-continue` | Player | Host sends stop- and continue-Command to interrupt user interaction |
 | `focus-notify` | Player | In case of getting or loosing the focus, the host expects the module to send an notification |
-| `report-on-demand` | Player | The host set the policy of reporting changed unit state |
 | `log-policy` | Player | The host sets the policy of sending logs |
 | `paging-mode` | Player | The host sets the way of presenting pages |
 | `navigation-denied` | Player | In case of denied navigation, the host let the module know and expects some visualisation of problems |
