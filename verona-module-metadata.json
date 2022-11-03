@@ -183,24 +183,31 @@
         "properties": {
           "id": {
             "type": "string",
-            "title": "Id of the package",
-            "description": "Used to load it on demand.",
-            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+            "title": "Id of the package or service",
+            "description": "Used to load or access on demand."
           },
           "description": {
             "type": "string",
             "title": "Description",
-            "description": "Helps to understand the function of the package."
+            "description": "Helps to understand the function of the package or service."
+          },
+          "type": {
+            "title": "Dependency Type",
+            "type": "string",
+            "description": "File is to be provided along the module, service is an accessible url.",
+            "enum": [
+              "file",
+              "service"
+            ]
           },
           "required": {
             "type": "boolean",
             "title": "Required",
-            "description": "States whether this packages is needed for all use cases of the Verona module or only for some special use cases."
+            "description": "States whether this packages or service is needed for all use cases of the Verona module or only for some special use cases."
           }
         },
-        "required": ["id", "required"]
-      },
-      "minItems": 1
+        "required": ["id", "required", "type"]
+      }
     }
   }
 }
