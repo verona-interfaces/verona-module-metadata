@@ -1,0 +1,45 @@
+{
+    "name": "verona-modules-metadata",
+    "version": "2.1.0",
+    "author": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
+    "license": "MIT",
+    "description": "JSON schema for verona interfaces modules metadata",
+    "scripts": {
+        "generate_doc": "ts-node src/addidcsv.ts sample_data"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/verona-interfaces/metadata.git"
+    },
+    "bugs": {
+        "url": "https://github.com/verona-interfaces/metadata/issues"
+    },
+    "homepage": "https://github.com/verona-interfaces/metadata#readme",
+    "eslintConfig": {
+        "extends": "@iqb/eslint-config",
+        "parserOptions": {
+            "project": "./tsconfig.json"
+        },
+        "rules": {
+            "no-console": "off",
+            "class-methods-use-this": [
+                "error",
+                {
+                    "exceptMethods": [
+                        "getElementComponent",
+                        "getNewOptionLabel",
+                        "transform"
+                    ]
+                }
+            ],
+            "import/export": 0
+        }
+    },
+    "devDependencies": {
+        "@types/node": "^20.4.4",
+        "eslint": "^8.54.0",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.2.2",
+        "json-schema-static-docs": "^0.25.0"
+    }
+}
