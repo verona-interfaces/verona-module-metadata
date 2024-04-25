@@ -11,13 +11,22 @@ fs.readdirSync(dataFolder).forEach((file) => {
   let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
     inputPath: "./schema",
     outputPath: "./docs",
+    enableMetaEnum: true,
     ajvOptions: {
       allowUnionTypes: true,
     },
-    enableMetaEnum: true,
     createIndex: false
   });
   await jsonSchemaStaticDocs.generate();
   console.log("Documents generated.");
-  
+ 
+  try {
+    let fileContent = fs.readFileSync('./docs/verona-module-metadata.md', 'utf8');
+    fileContent = fileContent.replace('```', '\n:::{.column-page}\n```json') + '\n:::';
+    fileContent = fileContent.replace('<tr><th>$', '<tr><th>\\$');
+    
+    fs.writeFileSync('./index.qmd', fileContent);
+  } catch (err) {
+    console.error(err);
+  }
 })();

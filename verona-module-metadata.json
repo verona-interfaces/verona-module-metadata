@@ -15,7 +15,13 @@
         "player",
         "schemer",
         "coder"
-      ]
+      ],
+      "meta:enum": {
+        "editaor": "Editor Plug-in",
+        "player": "Player Plug-in",
+        "schemer": "Schemer Plug-in",
+        "coder": "Autocoder-Component"
+      }
     },
     "id": {
       "title": "Identifier",

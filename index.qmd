@@ -1,62 +1,756 @@
----
-lang: de
-title: Verona Interfaces - Standards für computerbasiertes Testen
-format:
-    html:
-      anchor-sections: true
----
-![](banner-image.jpg)
 
-::: {.callout-note}
-## English version
-You find a short introduction in English language at the [end of this page](#english-verona-interface-specifications).
+
+# Verona Module Metadata
+
+
+
+<table>
+<tbody>
+<tr><th>\$id</th><td>https://raw.githubusercontent.com/verona-interfaces/metadata/master/verona-module-metadata.json</td></tr>
+<tr><th>$schema</th><td>http://json-schema.org/draft-07/schema#</td></tr>
+</tbody>
+</table>
+
+## Properties
+
+<table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#type">type</a></td><td>String</td></tr><tr><td colspan="2"><a href="#id">id</a></td><td>String</td></tr><tr><td colspan="2"><a href="#name">name</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#description">description</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#version">version</a></td><td>String</td></tr><tr><td colspan="2"><a href="#specversion">specVersion</a></td><td>String</td></tr><tr><td colspan="2"><a href="#metadataversion">metadataVersion</a></td><td>String</td></tr><tr><td colspan="2"><a href="#notsupportedfeatures">notSupportedFeatures</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#dependencies">dependencies</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#maintainer">maintainer</a></td><td>Object</td></tr><tr><td colspan="2"><a href="#code">code</a></td><td>Object</td></tr></tbody></table>
+
+
+
+<hr />
+
+
+## type
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">Verona Module Type</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
+    <tr>
+      <th>Enum</th>
+      <td colspan="2"><ul><li>editor</li><li>player</li><li>schemer</li><li>coder</li></ul></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+## id
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">Identifier</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">The id will be used as reference by any application using this module</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
+    <tr>
+      <th>Pattern</th>
+      <td colspan="2">^[A-Za-z][A-Za-z0-9_-]*$</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+## name
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">Name</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Name to be used in lists or forms when the identifier is too short</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">Array</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
+    <tr>
+      <th>Min Items</th>
+      <td colspan="2">1</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+## description
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">Description</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">The description should include any use case and should refer to used data formats.</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">Array</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    <tr>
+      <th>Min Items</th>
+      <td colspan="2">1</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+## version
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">Version in SemVer2 notation</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Semantic Versioning 2.0.0 required (MAJOR.MINOR.PATCH).</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
+    <tr>
+      <th>Pattern</th>
+      <td colspan="2">^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$</td>
+    </tr><tr>
+      <th>Examples</th>
+      <td colspan="2"><li>1.5.2</li><li>0.12.4-beta</li><li>12.0.0-rc.1</li></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+## specVersion
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">Version of Supported Module Specification</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Version of the Verona specification supported by this module in the form &#x27;MAJOR.MINOR&#x27;.</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
+    <tr>
+      <th>Pattern</th>
+      <td colspan="2">^(0|[1-9]\d*)\.(0|[1-9]\d*)$</td>
+    </tr><tr>
+      <th>Examples</th>
+      <td colspan="2"><li>1.5</li><li>4.12</li></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+## metadataVersion
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">Version of Supported Metadata Specification</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Version of the Verona Metadata specification supported by this metadata in the form of &#x27;MAJOR.MINOR&#x27;.</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">Yes</td>
+    </tr>
+    <tr>
+      <th>Pattern</th>
+      <td colspan="2">^(0|[1-9]\d*)\.(0|[1-9]\d*)$</td>
+    </tr><tr>
+      <th>Examples</th>
+      <td colspan="2"><li>1.5</li><li>4.12</li></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+## notSupportedFeatures
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">List of all features not supported</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Use the predefined keys to name not supported features.</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">Array</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    <tr>
+      <th>Unique Items</th>
+      <td colspan="2">true</td>
+    </tr><tr>
+      <th>Min Items</th>
+      <td colspan="2">1</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+## dependencies
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">Dependencies</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Packages needed during runtime.</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">Array</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+## maintainer
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">Maintainer</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Maintainer of the verona module</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">Object</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+### Properties
+  <table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#maintainername">name</a></td><td>Array</td></tr><tr><td colspan="2"><a href="#maintainerurl">url</a></td><td>String</td></tr><tr><td colspan="2"><a href="#maintaineremail">email</a></td><td>String</td></tr></tbody></table>
+
+
+### maintainer.name
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">Name</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Name of maintainer</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">Array</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    <tr>
+      <th>Min Items</th>
+      <td colspan="2">1</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+### maintainer.url
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">URL</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    <tr>
+      <th>Format</th>
+      <td colspan="2">uri</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+### maintainer.email
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">E-Mail</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    <tr>
+      <th>Format</th>
+      <td colspan="2">email</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+## code
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">Code</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td colspan="2">Data about source code</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">Object</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+### Properties
+  <table class="jssd-properties-table"><thead><tr><th colspan="2">Name</th><th>Type</th></tr></thead><tbody><tr><td colspan="2"><a href="#coderepositorytype">repositoryType</a></td><td>String</td></tr><tr><td colspan="2"><a href="#coderepositoryurl">repositoryUrl</a></td><td>String</td></tr><tr><td colspan="2"><a href="#codelicensetype">licenseType</a></td><td>String</td></tr><tr><td colspan="2"><a href="#codelicenseurl">licenseUrl</a></td><td>String</td></tr></tbody></table>
+
+
+### code.repositoryType
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">Repository Type</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    <tr>
+      <th>Default</th>
+      <td colspan="2">git</td>
+    </tr>
+    <tr>
+      <th>Examples</th>
+      <td colspan="2"><li>svn</li><li>mercurial</li></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+### code.repositoryUrl
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">Repository Url</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    <tr>
+      <th>Format</th>
+      <td colspan="2">uri</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+### code.licenseType
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">License Type</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    <tr>
+      <th>Default</th>
+      <td colspan="2">MIT</td>
+    </tr>
+    <tr>
+      <th>Examples</th>
+      <td colspan="2"><li>BSD-3-Clause</li><li>ISC</li></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+### code.licenseUrl
+
+
+<table class="jssd-property-table">
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <td colspan="2">License Url</td>
+    </tr>
+    <tr><th>Type</th><td colspan="2">String</td></tr>
+    <tr>
+      <th>Required</th>
+      <td colspan="2">No</td>
+    </tr>
+    <tr>
+      <th>Default</th>
+      <td colspan="2">https://opensource.org/licenses/MIT</td>
+    </tr>
+    <tr>
+      <th>Format</th>
+      <td colspan="2">uri</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+<hr />
+
+## Schema
+
+:::{.column-page}
+```json
+{
+    "$id": "https://raw.githubusercontent.com/verona-interfaces/metadata/master/verona-module-metadata.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Verona Module Metadata",
+    "type": "object",
+    "default": {
+        "$schema": "https://raw.githubusercontent.com/verona-interfaces/metadata/master/verona-module-metadata.json"
+    },
+    "properties": {
+        "type": {
+            "title": "Verona Module Type",
+            "type": "string",
+            "enum": [
+                "editor",
+                "player",
+                "schemer",
+                "coder"
+            ]
+        },
+        "id": {
+            "title": "Identifier",
+            "description": "The id will be used as reference by any application using this module",
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+        },
+        "name": {
+            "title": "Name",
+            "description": "Name to be used in lists or forms when the identifier is too short",
+            "$ref": "#/$defs/languageTaggedStrings"
+        },
+        "description": {
+            "title": "Description",
+            "description": "The description should include any use case and should refer to used data formats.",
+            "$ref": "#/$defs/languageTaggedStrings"
+        },
+        "version": {
+            "title": "Version in SemVer2 notation",
+            "description": "Semantic Versioning 2.0.0 required (MAJOR.MINOR.PATCH).",
+            "type": "string",
+            "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+            "examples": [
+                "1.5.2",
+                "0.12.4-beta",
+                "12.0.0-rc.1"
+            ]
+        },
+        "specVersion": {
+            "title": "Version of Supported Module Specification",
+            "description": "Version of the Verona specification supported by this module in the form 'MAJOR.MINOR'.",
+            "type": "string",
+            "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$",
+            "examples": [
+                "1.5",
+                "4.12"
+            ]
+        },
+        "metadataVersion": {
+            "title": "Version of Supported Metadata Specification",
+            "description": "Version of the Verona Metadata specification supported by this metadata in the form of 'MAJOR.MINOR'.",
+            "type": "string",
+            "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$",
+            "examples": [
+                "1.5",
+                "4.12"
+            ]
+        },
+        "notSupportedFeatures": {
+            "title": "List of all features not supported",
+            "description": "Use the predefined keys to name not supported features.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "focus-notify",
+                    "log-policy",
+                    "paging-mode",
+                    "navigation-denied",
+                    "variable-data"
+                ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "dependencies": {
+            "title": "Dependencies",
+            "description": "Packages needed during runtime.",
+            "$ref": "#/$defs/dependencies"
+        },
+        "maintainer": {
+            "title": "Maintainer",
+            "description": "Maintainer of the verona module",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "title": "Name",
+                    "description": "Name of maintainer",
+                    "$ref": "#/$defs/languageTaggedStrings"
+                },
+                "url": {
+                    "title": "URL",
+                    "type": "string",
+                    "format": "uri"
+                },
+                "email": {
+                    "title": "E-Mail",
+                    "type": "string",
+                    "format": "email"
+                }
+            }
+        },
+        "code": {
+            "title": "Code",
+            "description": "Data about source code",
+            "type": "object",
+            "properties": {
+                "repositoryType": {
+                    "title": "Repository Type",
+                    "type": "string",
+                    "default": "git",
+                    "examples": [
+                        "svn",
+                        "mercurial"
+                    ]
+                },
+                "repositoryUrl": {
+                    "title": "Repository Url",
+                    "type": "string",
+                    "format": "uri"
+                },
+                "licenseType": {
+                    "title": "License Type",
+                    "type": "string",
+                    "default": "MIT",
+                    "examples": [
+                        "BSD-3-Clause",
+                        "ISC"
+                    ]
+                },
+                "licenseUrl": {
+                    "title": "License Url",
+                    "type": "string",
+                    "format": "uri",
+                    "default": "https://opensource.org/licenses/MIT"
+                }
+            }
+        }
+    },
+    "required": [
+        "id",
+        "version",
+        "type",
+        "name",
+        "specVersion",
+        "metadataVersion"
+    ],
+    "$defs": {
+        "languageTaggedStrings": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "lang": {
+                        "type": "string",
+                        "title": "Language as ISO 639-1 Alpha-2 code",
+                        "description": "This language code declares the language of the value.",
+                        "pattern": "^[a-z]{2}$",
+                        "default": "de",
+                        "examples": [
+                            "en",
+                            "fr"
+                        ]
+                    },
+                    "value": {
+                        "type": "string",
+                        "title": "Value",
+                        "minLength": 1
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "minItems": 1
+        },
+        "dependencies": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "title": "Id of the package or service",
+                        "description": "Used to load or access on demand."
+                    },
+                    "description": {
+                        "type": "string",
+                        "title": "Description",
+                        "description": "Helps to understand the function of the package or service."
+                    },
+                    "type": {
+                        "title": "Dependency Type",
+                        "type": "string",
+                        "description": "File is to be provided along the module, service is an accessible url.",
+                        "enum": [
+                            "file",
+                            "service"
+                        ]
+                    },
+                    "required": {
+                        "type": "boolean",
+                        "title": "Required",
+                        "description": "States whether this packages or service is needed for all use cases of the Verona module or only for some special use cases."
+                    }
+                },
+                "required": [
+                    "id",
+                    "required",
+                    "type"
+                ]
+            }
+        }
+    }
+}
+```
+
+
+
 :::
-
-# Willkommen
-
-In Deutschland werden viele Erhebungen des Bildungsmonitorings dezentral durchgeführt, d. h. jedes Bundesland folgt eigenen Traditionen und Prioritäten. Auch zentral auf Ebene der [KMK](https://www.kmk.org/themen/qualitaetssicherung-in-schulen/bildungsmonitoring/) abgestimmte Lernstandserhebungen (VERA) benutzen zwar gleiche Aufgaben und methodische Verfahren, technisch und organisatorisch laufen aber auch diese Erhebungen getrennt in den Ländern. Eine zentrale technische Lösung würde in Deutschland den heterogenen Anforderungen nicht gerecht werden können.
-
-Daraus resultieren sehr hohe Anforderungen an die Modularität und Interoperabilität von technischen Lösungen im computerbasierten Testen. Sämtliche Programmierungen müssen über wohldokumentierte Schnittstellen verfügen. Die Initiative "Verona" hat das Ziel, diese Schnittstellendefinitionen zu erarbeiten und zu pflegen. An dieser Stelle finden Sie Verweise auf die Spezifikationen, aber vor allem ausführliche Erläuterungen für deren Nutzung (im Aufbau).
-
-# Spezifikationen - Übersicht
-
-Folgende Spezifikationen liegen vor und werden in englischer Sprache gesondert in Repositorien geführt:
-
-| Modul | Beschreibung | Direkte Links |
-| ------ | ------ | ----- |
-| [Player](https://github.com/verona-interfaces/player#readme) | Komponente, die eine Aufgabe in einer Testanwendung abspielt | [Spezifikation (Html)](https://verona-interfaces.github.io/player/), [Modell (UML)](https://github.com/verona-interfaces/player/blob/master/model/model.md) |
-| [Editor](https://github.com/verona-interfaces/editor#readme) | Komponente, mit der man Aufgaben gestaltet | [Spezifikation (Html)](https://verona-interfaces.github.io/editor/) |
-| [Schemer](https://github.com/verona-interfaces/schemer#readme) | Komponente, mit der man die Kodieranweisungen für die Antwortverarbeitung festlegt | [Spezifikation (Html)](https://verona-interfaces.github.io/schemer/) |
-| [Metadaten](https://github.com/verona-interfaces/metadata#readme) | Alle o. g. Komponenten enthalten Metadaten auf einheitliche Art, die hier beschrieben ist. | [Schema Editor](https://skohub.io/editor/?schema=https://raw.githubusercontent.com/verona-interfaces/metadata/master/verona-module-metadata.json) |
-
-
-# Redaktion
-
-Die vorliegenden Texte werden unter Federführung des [Instituts zur Qualitätsentwicklung im Bildungswesen](https://www.iqb.hu-berlin.de/vera) veröffentlicht. Autor\*innen sind ggf. entweder im Kopf eines Dokumentes genannt oder zu Beginn eines größeren Seitenzweiges. 
-
-# Lizenz
-Alle Texte sind unter der [Lizenz CC0](https://open-educational-resources.de/was-die-cc0-freigabe-bedeutet-und-welche-moeglichkeiten-sie-eroeffnen/) veröffentlicht. Die Leitlinien zur Sicherung guter wissenschaftlicher Praxis (s. z. B. [DFG-pdf](https://www.dfg.de/resource/blob/173732/4166759430af8dc2256f0fa54e009f03/kodex-gwp-data.pdf)) gebieten gleichwohl, dass die Quellen von Informationen genannt werden sollten.
-
-# Haftungsausschluss
-
-Auf diesen Webseiten sind Links auf externe Webseiten in besonderer Weise gekennzeichnet (s. oben der Link zum IQB). Wir prüfen diese Quellen regelmäßig, können aber für diese Seiten und die dort hinterlegten Zusatzmaterialien keine Haftung für Richtigkeit, Vollständigkeit und Aktualität übernehmen. Dafür sind ausschließlich deren Betreiber verantwortlich.
-
-# Technische Realisierung
-
-Dieser Webauftritt basiert auf Texten in einer einfachen Syntax [Markdown](https://markdown.de/), die anschließend in Html und CSS umgesetzt werden. Hierzu wird [Quarto](https://quarto.org/) verwendet. Sämtliche Dateien für den Inhalt und die Steuerung sind in einem öffentlich zugänglichen [Codeverwaltungssystem](https://github.com/verona-interfaces/verona-interfaces.github.io) gespeichert. Eine Anleitung für Änderungen an den Inhalten finden Sie z. B. [hier](https://github.com/iqb-berlin/vera-info?tab=readme-ov-file#readme).
-
-# Kontakt
-
-Wenn Sie Inhalte beitragen oder Probleme melden möchten, können Sie die Funktion "Problem melden" nutzen, die rechts auf jeder Seite zu finden ist. Sie werden dann zu GitHub weitergeleitet. Es ist ein Account bei GitHub erforderlich.
-
-Ansonsten kontakten Sie bitte die [IT des IQB](mailto:iqb-it@hu-berlin.de).
-
-# English: Verona Interface Specifications
-
-The repositories located at /verona-interfaces consist of API specifications for assessment applications. In Germany, every state / Bundesland conducts assessments in schools and uses different technical solutions. In order to exchange assessment units or to share code modules, the data formats and interfaces need to be specified. The initiative 'Verona' works on these specifications.
-
-This is an early stage of this endeavour, we did some first steps. To support this process, we publish this documentation in German language. Here you find a general introduction and clarifying of terms etc.
-
-Besides, the specifications come in separate repositories in English language: [Player](https://github.com/verona-interfaces/player#readme), [Editor](https://github.com/verona-interfaces/editor#readme), [Schemer](https://github.com/verona-interfaces/schemer#readme) and [Metadata](https://github.com/verona-interfaces/metadata#readme).
-
-Contact: [Institute for Educational Quality Improvement](mailto:iqb-it@hu-berlin.de).
