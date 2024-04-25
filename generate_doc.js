@@ -19,4 +19,5 @@ fs.readdirSync(dataFolder).forEach((file) => {
   });
   await jsonSchemaStaticDocs.generate();
   console.log("Documents generated.");
+  
 })();

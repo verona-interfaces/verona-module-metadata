@@ -6,8 +6,8 @@
 
 <table>
 <tbody>
-<tr><th>$id</th><td>https://raw.githubusercontent.com/verona-interfaces/metadata/master/verona-module-metadata.json</td></tr>
-<tr><th>$schema</th><td>http://json-schema.org/draft-07/schema#</td></tr>
+<tr><th>\$id</th><td>https://raw.githubusercontent.com/verona-interfaces/metadata/master/verona-module-metadata.json</td></tr>
+<tr><th>\$schema</th><td>http://json-schema.org/draft-07/schema#</td></tr>
 </tbody>
 </table>
 
@@ -523,7 +523,10 @@
 <hr />
 
 ## Schema
-```
+
+:::{.column-page}
+
+```json
 {
     "$id": "https://raw.githubusercontent.com/verona-interfaces/metadata/master/verona-module-metadata.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
@@ -750,3 +753,4 @@
 ```
 
 
+:::
