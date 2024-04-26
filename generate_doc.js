@@ -9,7 +9,7 @@ fs.readdirSync(dataFolder).forEach((file) => {
 
 (async () => {
   let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
-    inputPath: "./schema",
+    inputPath: ".",
     outputPath: "./docs",
     enableMetaEnum: true,
     ajvOptions: {
