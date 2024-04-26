@@ -22,7 +22,7 @@ website:
     contents:
       - href: index.qmd
         text: Home
-      - href: docs/verona-module-metadata.qmd
+      - href: verona-module-metadata.qmd
         text: Metadata Specification
   page-footer:
     border: true

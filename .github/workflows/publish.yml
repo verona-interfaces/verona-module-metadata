@@ -32,6 +32,8 @@ jobs:
           path: docs
           retention-days: 1
           overwrite: true
+      - name: Rename
+        run: mv docs/verona-module-metadata.qmd ./verona-module-metadata.qmd
       - name : Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
