@@ -2,14 +2,10 @@
 const JsonSchemaStaticDocs = require("json-schema-static-docs");
 
 const fs = require('fs');
-const dataFolder = "./schema";
-fs.readdirSync(dataFolder).forEach((file) => {
-    console.log(`\x1b[0;33mWARNING\x1b[0m file '${file}' found`);
-  });
 
 (async () => {
   let jsonSchemaStaticDocs = new JsonSchemaStaticDocs({
-    inputPath: ".",
+    inputPath: "./schema",
     outputPath: "./docs",
     enableMetaEnum: true,
     ajvOptions: {
