@@ -8,6 +8,7 @@ website:
   page-navigation: true
   repo-url: https://github.com/verona-interfaces/metadata
   repo-actions: [issue]
+  search: false
   navbar:
     pinned: true
     search: false
@@ -15,6 +16,14 @@ website:
     right:
       - text: "Go to verona-interfaces"
         href: "https://verona-interfaces.github.io/"
+  sidebar: 
+    style: "docked"
+    search: false
+    contents:
+      - href: index.qmd
+        text: Home
+      - href: docs/verona-module-metadata.qmd
+        text: Metadata Specification
   page-footer:
     border: true
     background: light
