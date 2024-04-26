@@ -17,7 +17,7 @@
         "coder"
       ],
       "meta:enum": {
-        "editaor": "Editor Plug-in",
+        "editor": "Editor Plug-in",
         "player": "Player Plug-in",
         "schemer": "Schemer Plug-in",
         "coder": "Autocoder-Component"
@@ -25,7 +25,7 @@
     },
     "id": {
       "title": "Identifier",
-      "description": "The id will be used as reference by any application using this module",
+      "description": "The id will be used as referencce by any application using this module",
       "type": "string",
       "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
     },
