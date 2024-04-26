@@ -1,0 +1,22 @@
+{
+    "name": "verona-modules-metadata",
+    "version": "2.1.0",
+    "author": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
+    "license": "MIT",
+    "description": "JSON schema for verona interfaces modules metadata",
+    "scripts": {
+        "generate_doc": "node ./generate_doc.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/verona-interfaces/metadata.git"
+    },
+    "bugs": {
+        "url": "https://github.com/verona-interfaces/metadata/issues"
+    },
+    "homepage": "https://github.com/verona-interfaces/metadata#readme",
+    "devDependencies": {
+        "@types/node": "^20.4.4",
+        "json-schema-static-docs": "^0.25.0"
+    }
+}

@@ -15,13 +15,7 @@
         "player",
         "schemer",
         "coder"
-      ],
-      "meta:enum": {
-        "editaor": "Editor Plug-in",
-        "player": "Player Plug-in",
-        "schemer": "Schemer Plug-in",
-        "coder": "Autocoder-Component"
-      }
+      ]
     },
     "id": {
       "title": "Identifier",
@@ -41,33 +35,24 @@
     },
     "version": {
       "title": "Version in SemVer2 notation",
-      "description": "Semantic Versioning 2.0.0 required.",
+      "description": "Semantic Versioning 2.0.0 required (MAJOR.MINOR.PATCH).",
       "type": "string",
       "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
-      "examples": ["1.5.2", "0.12.4-beta", "12.0.0-rc.1"],
-      "_display": {
-        "placeholder": "MAJOR.MINOR.PATCH"
-      }
+      "examples": ["1.5.2", "0.12.4-beta", "12.0.0-rc.1"]
     },
     "specVersion": {
       "title": "Version of Supported Module Specification",
       "description": "Version of the Verona specification supported by this module in the form 'MAJOR.MINOR'.",
       "type": "string",
       "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$",
-      "examples": ["1.5", "4.12"],
-      "_display": {
-        "placeholder": "MAJOR.MINOR"
-      }
+      "examples": ["1.5", "4.12"]
     },
     "metadataVersion": {
       "title": "Version of Supported Metadata Specification",
       "description": "Version of the Verona Metadata specification supported by this metadata in the form of 'MAJOR.MINOR'.",
       "type": "string",
       "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$",
-      "examples": ["1.5", "4.12"],
-      "_display": {
-        "placeholder": "MAJOR.MINOR"
-      }
+      "examples": ["1.5", "4.12"]
     },
     "notSupportedFeatures": {
       "title": "List of all features not supported",
