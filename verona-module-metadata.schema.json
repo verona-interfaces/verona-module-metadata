@@ -1,21 +1,9 @@
 {
-  "$id": "verona-module-metadata@3.0",
+  "$id": "verona-module-metadata@3.1",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Verona Module Metadata",
   "type": "object",
   "properties": {
-    "type": {
-      "title": "Verona Module Type",
-      "type": "string",
-      "enum": [
-        "EDITOR",
-        "PLAYER",
-        "SCHEMER",
-        "WIDGET_CALC",
-        "WIDGET_PERIODIC_TABLE",
-        "WIDGET_MOLECULE_EDITOR"
-      ]
-    },
     "id": {
       "title": "Identifier",
       "description": "The id will be used as reference by any application using this module",
@@ -26,6 +14,21 @@
       "title": "Name",
       "description": "Name to be used in lists or forms when the identifier is too short",
       "$ref": "#/$defs/languageTaggedStrings"
+    },
+    "type": {
+      "title": "Verona Module Type",
+      "type": "string",
+      "enum": [
+        "EDITOR",
+        "PLAYER",
+        "SCHEMER",
+        "WIDGET"
+      ]
+    },
+    "model": {
+      "title": "Type variant",
+      "description": "Specifies the type more precisely. This can be the WIDGET model like 'CALC' or 'PSE' or the data type used by the module like 'iqb-aspect@12.5'.",
+      "type": "string"
     },
     "description": {
       "title": "Description",
